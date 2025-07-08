@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="這個小測驗只需要回答25個問題，就可以快速簡單測出你是“拌人”還是“不拌人”！">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拌不拌測驗</title>
+ 
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.zhang-tw.com/File/Logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.zhang-tw.com/File/Logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.zhang-tw.com/File/Logo/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.zhang-tw.com/File/Logo/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://www.zhang-tw.com/File/Logo/android-chrome-512x512.png">
+    <link rel="icon" type="image/png"  href="https://www.zhang-tw.com/File/Logo/favicon.ico">
+
+    <link rel="stylesheet" href="style.css" >
+
+    <meta property="og:image" content="https://www.zhang-tw.com/Project_Icons/og_img/food.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="675">
+    <meta property="og:title" content="拌不拌測驗">
+    <meta property="og:description" content="這個小測驗只需要回答25個問題，就可以快速簡單測出你是“拌人”還是“不拌人”！">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header>
+        <h1>拌不拌測驗</h1>
+    </header>
+
+    <button class="menu_Btn"><img src="File/Menu_Icon.png" alt="Menu"></button>
+
+    <div class="menu">
+        <div>
+            <img src="https://www.zhang-tw.com/File/Logo/android-chrome-512x512.png" alt="Zhang." class="menu_Logo">
+            <img src="https://www.zhang-tw.com/File/Menu/close_icon.png" alt="Close" class="close_Btn">
+        </div>
+        
+        <ul>
+            <li><a href="https://www.zhang-tw.com/home">首頁</a></li>
+            <li><a href="#Q1">第1題</a></li>
+            <li><a href="#Q5">第5題</a></li>
+            <li><a href="#Q10">第10題</a></li>
+            <li><a href="#Q15">第15題</a></li>
+            <li><a href="#Q20">第20題</a></li>
+            <li><a href="#Q25">第25題</a></li>
+        </ul>
+    </div>
+
+    <form id="FoodQuiz" class="FoodQuiz">
+
+        <script src="question.js"></script>
+
+        <div class="btn_Div">
+            <button type="submit" id="submit_Btn" class="submit_Btn">查看結果</button>
+        </div>
+    </form>
+
+    <footer>
+        <p></p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

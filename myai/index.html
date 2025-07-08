@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="你想要製作出專屬於自己的AI嗎？這個網站用了簡單、直覺、好上手的方法讓每個人都可以做出自己的AI，你可以訓練他變成一位朋友、家人等等...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>做出自己的AI！</title>
+ 
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.zhang-tw.com/File/Logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.zhang-tw.com/File/Logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.zhang-tw.com/File/Logo/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.zhang-tw.com/File/Logo/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://www.zhang-tw.com/File/Logo/android-chrome-512x512.png">
+    <link rel="icon" type="image/png"  href="https://www.zhang-tw.com/File/Logo/favicon.ico">
+
+    <link rel="stylesheet" href="styles.css" >
+
+    <meta property="og:image" content="https://www.zhang-tw.com/Project_Icons/og_img/myai.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="675">
+    <meta property="og:title" content="做出自己的AI！">
+    <meta property="og:description" content="你想要製作出專屬於自己的AI嗎？這個網站用了簡單、直覺、好上手的方法讓每個人都可以做出自己的AI，你可以訓練他變成一位朋友、家人等等...">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.15.0/dist/tf.min.js"></script>
+    
+    <script type="application/ld+json">
+        {
+          "@context" : "https://schema.org",
+          "@type" : "WebSite",
+          "name" : "Zhang.",
+          "alternateName" : "Zhang.",
+          "url" : "https://www.zyreny.com/",
+        }
+    </script>
+
+    <style>
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .status-message {
+            text-align: center;
+            color: #666;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div>
+        <button class="menu_Btn"><img src="../File/Menu/Menu_icon.png" alt="Menu"></button>
+
+        <div class="menu">
+            <div>
+                <img src="https://www.zhang-tw.com/File/Logo/android-chrome-512x512.png" alt="Zhang." class="menu_Logo">
+                <img src="https://www.zhang-tw.com/File/Menu/close_icon.png" alt="Close" class="close_Btn">
+            </div>
+            
+            <ul>
+                <li><a href="/">首頁</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modeIndicator" class="mode-indicator">聊天模式</div>
+    <div id="statusMessage" class="status-message"></div>
+    <div id="loader" class="loader" style="display: none;"></div>
+    
+    <div class="main-container">
+        <div class="button-container">
+            <button id="modeToggle">切換至訓練模式</button>
+            <button id="trainAI">訓練AI模型</button>
+            <button id="exportData">導出訓練資料</button>
+            <button id="importData">導入訓練資料</button>
+            <button id="clearData">清除訓練資料</button>
+            <input type="file" id="importFile" style="display: none;" accept=".json">
+        </div>
+        
+        <div class="chat-wrapper">
+            <div id="chatContainer" class="chat-container">
+            
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="請輸入訊息...">
+                <button id="sendButton">
+                    <div class="plane"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="model.js"></script>
+    <script>
+        // 確保 model.js 已經載入
+        if (typeof AIModel === 'undefined') {
+            console.error('AIModel 未定義，請確認 model.js 是否正確載入');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
