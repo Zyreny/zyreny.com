@@ -21,19 +21,45 @@ const projs = [
     }, 
 ]
 
-let projsDiv = document.querySelector(".projs-list"); 
-projsDiv.innerHTML = ""; 
+let projsList = document.querySelector(".projs-list"); 
+projsList.innerHTML = ""; 
 
 for (let i = 0; i < 4; i++) {
     let proj = projs[i]; 
-    projsDiv.innerHTML += `
+    projsList.innerHTML += `
     <a href="${proj.name}" class="proj">
         <div>
-            <img src="assets/img/projs/${proj.name}.png" alt="${proj.title}">
+            <img src="/assets/img/projs/${proj.name}.png" alt="${proj.title}">
             <h2>${proj.title}</h2>
             <p>${proj.desc}</p>
         </div>
     </a>`
+}
+
+const prods = [
+    {
+        name: "網頁開發、網站架設", 
+        id: "web", 
+        desc: "如果你需要一個網站，無論是個人網站、商業網站或是其他網站，我都可以幫你做。"
+    }, 
+    {
+        name: "平面設計", 
+        id: "design", 
+        desc: "如果你需要平面設計，海報、名片等等，我都可以幫你做。"
+    }, 
+]
+
+let prodsList = document.querySelector(".products-list"); 
+prodsList.innerHTML = ""; 
+
+for (let i = 0; i < prods.length; i++) {
+    let prod = prods[i]; 
+    prodsList.innerHTML += `
+    <div class="product">
+        <img src="/assets/img/home/${prod.id}.svg" alt="${prod.name}" class="product-img">
+        <h2>${prod.name}</h2>
+        <p>${prod.desc}</p>
+    </div>`
 }
 
 const news = [

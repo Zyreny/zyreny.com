@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zyreny</title>
     <meta name="description" content="我是Zyreny，一個喜歡程式的國中生，這裡有一些奇怪有趣的專案作品。">
-    <link rel="stylesheet" href="home/style.css">
+    <link rel="stylesheet" href="/home/style.css">
     
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -27,7 +27,7 @@
 <body>
     <header>
         <h1>Zyreny</h1>
-        <nav>
+        <a href="#"><img src="/assets/img/logo/Zyreny_full.svg" alt="Zyreny"></a><nav>
             <ul>
                 <a href="#"><li>首頁</li></a>
                 <a href="#About"><li>關於我</li></a>
@@ -41,12 +41,12 @@
 
     <nav class="bottom-nav">
         <ul>
-            <a href="#"><li><img src="assets/img/menu/home.svg" alt="首頁"> 首頁</li></a>
-            <a href="#About"><li><img src="assets/img/menu/about.svg" alt="關於我"> 關於我</li></a>
-            <a href="#Projects"><li><img src="assets/img/menu/projects.svg" alt="作品"> 作品</li></a>
-            <a href="#Store"><li><img src="assets/img/menu/store.svg" alt="商店"> 商店</li></a>
-            <a href="#News"><li><img src="assets/img/menu/news.svg" alt="新聞"> 新聞</li></a>
-            <a href="#Contact"><li><img src="assets/img/menu/contact.svg" alt="聯絡"> 聯絡</li></a>
+            <a href="#"><li><img src="/assets/img/menu/home.svg" alt="首頁"> 首頁</li></a>
+            <a href="#About"><li><img src="/assets/img/menu/about.svg" alt="關於我"> 關於我</li></a>
+            <a href="#Projects"><li><img src="/assets/img/menu/projects.svg" alt="作品"> 作品</li></a>
+            <a href="#Store"><li><img src="/assets/img/menu/store.svg" alt="商店"> 商店</li></a>
+            <a href="#News"><li><img src="/assets/img/menu/news.svg" alt="新聞"> 新聞</li></a>
+            <a href="#Contact"><li><img src="/assets/img/menu/contact.svg" alt="聯絡"> 聯絡</li></a>
         </ul>
     </nav>
 
@@ -60,7 +60,7 @@
         <div class="about" id="About">
             <h1 class="title">關於我</h1>
             <div>
-                <img src="assets/img/Nyan.gif" alt="Zyreny" class="nyan">
+                <img src="/assets/img/home/Nyan.gif" alt="Zyreny" class="nyan">
                 <p>嗨，我是 <b>Zyreny</b>，一個來自台中的普通國中生。<span class="br"></span>
                     喜歡 <b>寫程式、平面設計、攝影、哲學、社會心理學</b>，<span class="br"></span>
                     現在專注在 <b>網頁前端開發</b>、設計風格是極簡風、<span class="br"></span>
@@ -73,26 +73,14 @@
             <h1 class="title">作品集</h1>
             <p class="desc">這裡會放我最新的四個作品，各有特色。</p>
             <div class="projs-list"></div>
-            <a href="" class="view-all">看全部<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg></a>
+            <!-- <a href="" class="view-all">看全部<img src="/assets/img/home/arrow.svg" alt=">"></a> -->
         </div>
 
         <div class="store" id="Store">
             <h1 class="title">商店</h1>
             <p class="desc">讓我賺點外快吧，現在的服務有以下這幾個：<span class="br"></span>商店功能還在開發，如果要下單請到<a href="https://discord.gg/6yNPNpRVWs">Discord</a>了解</p>
 
-            <div class="products-list" id="productsList">
-                <div class="product">
-                    <img src="assets/home/web.svg" alt="網站架設、網頁開發" class="product-img">
-                    <h2>網頁開發</h2>
-                    <p>如果你需要一個網站，無論是個人網站、商業網站或是其他網站，我都可以幫你做。</p>
-                </div>
-
-                <div class="product">
-                    <img src="assets/home/design.svg" alt="平面設計" class="product-img">
-                    <h2>平面設計</h2>
-                    <p>如果你需要平面設計，海報、名片等等，我都可以幫你做。</p>
-                </div>
-            </div>
+            <div class="products-list"></div>
         </div>
 
         <div class="news" id="News">
@@ -106,9 +94,9 @@
             <h1 class="title">聯絡我</h1>
             <p class="desc">如果你對於我有任何問題、建議或想和我聊天，可以用底下這些方式找我：</p>
             <div class="contact-list">
-                <button><a href="mailto:hi@zyreny.com"><img src="assets/img/contact/email.svg" alt="Email">Email</a></button>
-                <button><a href="https://www.instagram.com/zyreny_/" target="_blank"><img src="assets/img/contact/instagram.svg" alt="Instagram">Instagram</a></button>
-                <button><a href="https://discord.gg/XdedtvmPZ6" target="_blank"><img src="assets/img/contact/discord.svg" alt="Discord">Discord</a></button>
+                <button><a href="mailto:hi@zyreny.com"><img src="/assets/img/contact/email.svg" alt="Email">Email</a></button>
+                <button><a href="https://www.instagram.com/zyreny_/" target="_blank"><img src="/assets/img/contact/instagram.svg" alt="Instagram">Instagram</a></button>
+                <button><a href="https://discord.gg/XdedtvmPZ6" target="_blank"><img src="/assets/img/contact/discord.svg" alt="Discord">Discord</a></button>
             </div>
 
             <p class="desc return">如果你在這個網站裡面遇到任何問題，可以傳電子郵件到<a href="mailto:support@zyreny.com">這裡</a>回報。</p>
@@ -119,6 +107,6 @@
         <p>版權聲明 &copy; 2025 Zyreny</p>
     </footer>
 
-    <script src="home/script.js"></script>
+    <script src="/home/script.js"></script>
 </body>
 </html>

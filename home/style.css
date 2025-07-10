@@ -50,10 +50,12 @@ header {
     box-shadow: 0 0 10px var(--header-bg);
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 4; 
 }
-header h1 {
-    color: #fff;
+header h1 {display: none;}
+header img {
+    height: 45px;  
+    padding: 0 0.5rem;
 }
 header nav, header ul, header li, header a {
     height: 100%;
@@ -65,7 +67,7 @@ header ul {
     display: flex;
     list-style-type: none;
 }
-header a {
+header ul a {
     text-decoration: none;
     color: #fff;
     font-size: 1.3rem;
@@ -75,7 +77,7 @@ header a {
     cursor: pointer;
     user-select: none;
 }
-header a:hover {
+header ul a:hover {
     background-color: var(--nav-a-hover);
 }
 
@@ -90,7 +92,7 @@ header a:hover {
     justify-content: center; 
     gap: 1rem;
     position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 .top::after {
     content: "";
@@ -241,7 +243,7 @@ header a:hover {
     width: fit-content;
     margin-top: 2rem;
 }
-.view-all svg {
+.view-all img {
     width: 1.4rem;
     height: 1.4rem;
     fill: var(--btn-color);
@@ -250,9 +252,8 @@ header a:hover {
 .view-all:hover {
     background-color: var(--proj-hover);
 }
-.view-all:hover svg {
+.view-all:hover img {
     transform: translateX(8px);
-    transition: transform 0.3s ease;
 }
 
 .store {
@@ -566,6 +567,9 @@ footer {
     header {
         justify-content: center;
         height: 60px;
+    }
+    header img {
+        height: 38px;
     }
     .top {
         height: calc(100vh - 60px);
