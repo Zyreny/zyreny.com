@@ -81,7 +81,7 @@ function loadNav(btns) {
     nav.innerHTML = `
     <header>
         <h1>Zyreny</h1>
-        <a href="#"><img src="/assets/img/logo/Zyreny_full.svg" alt="Zyreny"></a>
+        <a href="#"><img src="/assets/img/logo/zyreny_full.svg" alt="Zyreny"></a>
         <nav><ul>${navHTML}</ul></nav>
     </header>
     <bottom-nav><ul>${btmNavHTML}</ul></bottom-nav>`; 
