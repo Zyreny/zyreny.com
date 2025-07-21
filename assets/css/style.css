@@ -35,10 +35,12 @@ header {
     box-shadow: 0 0 10px var(--header-bg);
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 4; 
 }
-header h1 {
-    color: #fff;
+header h1 {display: none;}
+header img {
+    height: 45px;  
+    padding: 0 0.5rem;
 }
 header nav, header ul, header li, header a {
     height: 100%;
@@ -50,17 +52,17 @@ header ul {
     display: flex;
     list-style-type: none;
 }
-header a {
+header ul a {
     text-decoration: none;
     color: #fff;
     font-size: 1.3rem;
-    font-family: "Huninn";
+    font-family: "Huninn", sans-serif;
     transition: .3s ease;
     padding: 0 1rem;
     cursor: pointer;
     user-select: none;
 }
-header a:hover {
+header ul a:hover {
     background-color: var(--nav-a-hover);
 }
 
@@ -93,6 +95,7 @@ bottom-nav li {
     list-style-type: none;
     transition: background-color 0.3s ease;
     gap: 0.2rem;
+    height: 100%;
 }
 bottom-nav li:hover {
     background-color: var(--nav-a-hover);
@@ -106,11 +109,25 @@ bottom-nav a {
     text-decoration: none;
     color: #fff;
     transition: color 0.3s ease;
-    font-family: "Huninn";
+    font-family: "Huninn", sans-serif;
     font-size: 0.9rem;
 }
 
+footer {
+    background-color: var(--theme-color);
+    box-shadow: 0 0 10px var(--theme-color);
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 1.3rem;
+    font-family: "Huninn", sans-serif;
+}
+
 @media screen and (max-width: 768px) {
+    body {
+        margin-bottom: 60px;
+        padding-top: 60px;
+    }
+
     header nav {
         display: none;
     }
@@ -118,7 +135,28 @@ bottom-nav a {
         justify-content: center;
         height: 60px;
     }
+    header img {
+        height: 38px;
+    }
+
     bottom-nav {
         display: flex; 
     }
+}
+@media screen and (max-width: 450px) {
+    bottom-nav li {
+        padding: 0.5rem 0.8rem;
+    }
+}
+@media screen and (max-width: 350px) {
+    bottom-nav li {
+        padding: 0.5rem 0.5rem;
+    }
+    bottom-nav li img {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    /* bottom-nav a {
+        font-size: 0.8rem;
+    } */
 }

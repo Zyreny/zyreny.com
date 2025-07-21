@@ -4,51 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zyreny</title>
-    <meta name="description" content="我是Zyreny，一個喜歡程式的國中生，這裡有一些奇怪有趣的專案作品。">
-    <link rel="stylesheet" href="/home/style.css">
-    
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
-    <link rel="icon" type="image/png"  href="/assets/favicon/favicon.ico">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
-
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Huninn&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
-
-    <!-- seo -->
-    <link rel="canonical" href="https://zyreny.com/">
+    <meta name="description" content="我是Zyreny，一個喜歡程式的國中生，這裡有一些奇怪有趣的網頁專案作品。">
+    <meta name="keywords" content="Zyreny, 程式設計, 前端開發, 網頁設計, Vue.js, C++, 平面設計, 攝影, 臺中, 國中生, 作品集">
+    <meta name="author" content="Zyreny">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-TW">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
 </head>
 <body>
-    <header>
-        <h1>Zyreny</h1>
-        <a href="#"><img src="/assets/img/logo/Zyreny_full.svg" alt="Zyreny"></a><nav>
-            <ul>
-                <a href="#"><li>首頁</li></a>
-                <a href="#About"><li>關於我</li></a>
-                <a href="#Projects"><li>作品</li></a>
-                <a href="#Store"><li>商店</li></a>
-                <a href="#News"><li>新聞</li></a>
-                <a href="#Contact"><li>聯絡</li></a>
-            </ul>
-        </nav>
-    </header>
-
-    <nav class="bottom-nav">
-        <ul>
-            <a href="#"><li><img src="/assets/img/menu/home.svg" alt="首頁"> 首頁</li></a>
-            <a href="#About"><li><img src="/assets/img/menu/about.svg" alt="關於我"> 關於我</li></a>
-            <a href="#Projects"><li><img src="/assets/img/menu/projects.svg" alt="作品"> 作品</li></a>
-            <a href="#Store"><li><img src="/assets/img/menu/store.svg" alt="商店"> 商店</li></a>
-            <a href="#News"><li><img src="/assets/img/menu/news.svg" alt="新聞"> 新聞</li></a>
-            <a href="#Contact"><li><img src="/assets/img/menu/contact.svg" alt="聯絡"> 聯絡</li></a>
-        </ul>
-    </nav>
+    <div nav></div>
 
     <main>
         <div class="top">
@@ -61,7 +26,7 @@
             <h1 class="title">關於我</h1>
             <div>
                 <img src="/assets/img/home/Nyan.gif" alt="Zyreny" class="nyan">
-                <p>嗨，我是 <b>Zyreny</b>，一個來自台中的普通國中生。<span class="br"></span>
+                <p>嗨，我是 <b>Zyreny</b>，一個來自臺中的普通國中生。<span class="br"></span>
                     喜歡 <b>寫程式、平面設計、攝影、哲學、社會心理學</b>，<span class="br"></span>
                     現在專注在 <b>網頁前端開發</b>、設計風格是極簡風、<span class="br"></span>
                     正在學習 <b>C++, Vue.js</b>
@@ -103,10 +68,21 @@
         </div>
     </main>
 
-    <footer>
-        <p>版權聲明 &copy; 2025 Zyreny</p>
-    </footer>
+    <footer></footer>
 
     <script src="/home/script.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script>
+        loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
+        initPage("Zyreny - 創造、探索、突破", "我是Zyreny，一個喜歡程式的國中生，專注於網頁前端開發、平面設計。這裡有我的作品集和最新消息。"); 
+        loadNav([
+            { id: "home", name: "首頁", href: "#" }, 
+            { id: "about", name: "關於我", href: "#About" },
+            { id: "projects", name: "作品", href: "#Projects" },
+            { id: "store", name: "商店", href: "#Store" },
+            { id: "news", name: "新聞", href: "#News" },
+            { id: "contact", name: "聯絡", href: "#Contact" }
+        ]);
+    </script>
 </body>
 </html>
