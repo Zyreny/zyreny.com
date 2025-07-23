@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>專案資料:</p>
+    <script>
+        fetch("https://api.zyreny.com/projects")
+            .then(response => response.json())
+            .then(data => {
+                console.log("Projects Data:", data);
+                const projectsList = document.createElement("ul");
+                data.data.forEach(project => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = project.name;
+                    projectsList.appendChild(listItem);
+                });
+                document.body.appendChild(projectsList);
+            })
+            .catch(error => {
+                console.error("Error fetching projects:", error);
+            });
+    </script>
+</body>
+</html>
