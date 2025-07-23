@@ -8,20 +8,55 @@
 <body>
     <p>專案資料:</p>
     <script>
-        fetch("https://api.zyreny.com/projects")
+        // 先測試簡單端點
+        console.log('測試 API 連接...');
+        
+        fetch("https://api.zyreny.com/test")
+            .then(response => {
+                console.log('測試端點回應:', response.status, response.statusText);
+                return response.json();
+            })
+            .then(data => {
+                console.log("測試成功:", data);
+                
+                // 測試成功後再嘗試 projects
+                return fetch("https://api.zyreny.com/projects");
+            })
             .then(response => response.json())
             .then(data => {
                 console.log("Projects Data:", data);
                 const projectsList = document.createElement("ul");
-                data.data.forEach(project => {
+                
+                // 處理不同的回應格式
+                let projects = [];
+                if (Array.isArray(data)) {
+                    // 如果直接是陣列
+                    projects = data;
+                } else if (data.data && Array.isArray(data.data)) {
+                    // 如果是 {data: [...]} 格式
+                    projects = data.data;
+                } else {
+                    console.log("未知的資料格式:", data);
+                }
+                
+                if (projects.length > 0) {
+                    projects.forEach(project => {
+                        const listItem = document.createElement("li");
+                        listItem.textContent = `${project.name || 'Unknown'} - ${project.description || 'No description'}`;
+                        projectsList.appendChild(listItem);
+                    });
+                } else {
                     const listItem = document.createElement("li");
-                    listItem.textContent = project.name;
+                    listItem.textContent = "沒有專案資料";
                     projectsList.appendChild(listItem);
-                });
+                }
                 document.body.appendChild(projectsList);
             })
             .catch(error => {
                 console.error("Error fetching projects:", error);
+                const errorMsg = document.createElement("p");
+                errorMsg.textContent = "載入失敗: " + error.message;
+                document.body.appendChild(errorMsg);
             });
     </script>
 </body>
