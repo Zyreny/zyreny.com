@@ -76,12 +76,12 @@ function loadNav(btns) {
     const nav = document.querySelector("[nav]"); 
     
     const navHTML = btns.map(btn => `<a href="${btn.href}"><li>${btn.name}</li></a>`).join("");
-    const btmNavHTML = btns.map(btn => `<a href="${btn.href}"><li><img src="/assets/img/menu/${btn.id}.svg" alt="${btn.name}">${btn.name}</li></a>`).join("");
+    const btmNavHTML = btns.map(btn => `<a href="${btn.href}"><li><img src="https://zyreny.com/assets/img/menu/${btn.id}.svg" alt="${btn.name}">${btn.name}</li></a>`).join("");
 
     nav.innerHTML = `
     <header>
         <h1>Zyreny</h1>
-        <a href="#"><img src="/assets/img/logo/zyreny_full.svg" alt="Zyreny"></a>
+        <a href="#"><img src="https://zyreny.com/assets/img/logo/zyreny_full.svg" alt="Zyreny"></a>
         <nav><ul>${navHTML}</ul></nav>
     </header>
     <bottom-nav><ul>${btmNavHTML}</ul></bottom-nav>`; 
