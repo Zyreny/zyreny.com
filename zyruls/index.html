@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zyruls 縮網址</title>
+    <meta name="description" content="Zyruls 是一個用來縮短網址的工具，把原本可能近100個字的連結縮短成約10個字、甚至更少！">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/zyruls.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png"  href="/assets/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zyreny.com/">
+    <meta property="og:title" content="Zyruls 縮網址">
+    <meta property="og:description" content="Zyruls 是一個用來縮短網址的工具，把原本可能近100個字的連結縮短成約10個字、甚至更少！">
+    <meta property="og:image" content="https://zyreny.com/assets/img/logo/og_img.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Zyreny">
+    <meta property="og:site_name" content="Zyreny">
+    <meta property="og:locale" content="zh_TW">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zyreny.com/">
+    <meta property="twitter:title" content="Zyruls 縮網址">
+    <meta property="twitter:description" content="Zyruls 是一個用來縮短網址的工具，把原本可能近100個字的連結縮短成約10個字、甚至更少！">
+    <meta property="twitter:image" content="https://zyreny.com/assets/img/logo/og_img.png">
+    <meta property="twitter:image:width" content="1200">
+    <meta property="twitter:image:height" content="630">
+    <meta property="twitter:image:type" content="image/png">
+
+    <meta name="theme-color" content="#2885e2">
+    <meta name="msapplication-TileColor" content="#2885e2">
+    <meta name="application-name" content="Zyreny">
+    <link rel="canonical" href="https://zyreny.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "website",
+        "name": "Zyreny",
+        "alternateName": "Zyreny",
+        "url": "https://zyreny.com",
+        "image": "https://zyreny.com/assets/img/logo/Zyreny_full.svg",
+        "description": "Zyruls 是一個用來縮短網址的工具，把原本可能近100個字的連結縮短成約10個字、甚至更少！",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "臺中",
+            "addressCountry": "TW"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hi@zyreny.com",
+            "contactType": "customer service"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div nav></div>
+
+    <div class="url-shortener">
+        <div class="main-card">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="create">
+                    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#174879">
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+                    </svg>
+                    建立短網址
+                </button>
+                <button class="tab-button" data-tab="manage">
+                    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#174879">
+                        <path d="M280-280h80v-280h-80v280Zm160 0h80v-400h-80v400Zm160 0h80v-160h-80v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/>
+                    </svg>
+                    管理網址
+                </button>
+            </div>
+
+            <div id="createTab" class="tab-content active">
+                <div id="alertSuccess" class="alert alert-success">
+                    <span id="alertSuccessText"></span>
+                </div>
+                <div id="alertError" class="alert alert-error">
+                    <span id="alertErrorText"></span>
+                </div>
+
+                <form id="createForm">
+                    <div class="form-group">
+                        <label for="originalUrl">原始網址 *</label>
+                        <input 
+                            type="url" 
+                            id="originalUrl" 
+                            class="form-control" 
+                            placeholder="https://example.com/very/long/url" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customCode">自訂連結（選填）</label>
+                            <input 
+                                type="text" 
+                                id="customCode" 
+                                class="form-control" 
+                                placeholder="custom_link"
+                                pattern="[a-zA-Z0-9-_]{3,20}"
+                                title="3-20個字符，只能包含字母、數字、連字號和底線"
+                            >
+                            <div class="form-help">3-20個字符，只能包含字母、數字、連字號和底線</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="expiration">過期時間（選填）</label>
+                            <input 
+                                type="datetime-local" 
+                                id="expiration" 
+                                class="form-control"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">密碼保護（選填）</label>
+                        <div class="password-input">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                class="form-control" 
+                                placeholder="設定存取密碼"
+                            >
+                            <button type="button" class="password-toggle" id="passwordToggle">
+                                <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#174879">
+                                    <path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" class="section-toggle-button" id="metadataToggle">
+                            <span class="section-label-text">社群媒體預覽（選填）</span>
+                            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#666">
+                                <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
+                            </svg>
+                        </button>
+                        <div class="collapsible-section" id="metadataSection">
+                            <div class="form-help">自訂連結在社群媒體（Facebook、Twitter、LINE等）上的顯示效果</div>
+                            
+                            <div class="form-group">
+                                <label for="metaTitle">自訂標題</label>
+                                <input 
+                                    type="text" 
+                                    id="metaTitle" 
+                                    class="form-control" 
+                                    placeholder="Zyruls 縮網址"
+                                    maxlength="200"
+                                >
+                                <div class="form-help">最多200字符</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="metaDescription">自訂描述</label>
+                                <textarea 
+                                    id="metaDescription" 
+                                    class="form-control" 
+                                    placeholder="Zyruls 是一個用來縮短網址的工具，把原本可能近100個字的連結縮短成約10個字、甚至更少！"
+                                    maxlength="500"
+                                    rows="3"
+                                ></textarea>
+                                <div class="form-help">最多500字符</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="metaImage">縮圖網址</label>
+                                <input 
+                                    type="url" 
+                                    id="metaImage" 
+                                    class="form-control" 
+                                    placeholder="https://example.com/image.jpg"
+                                >
+                                <div class="form-help">建議尺寸：1200x630 像素，支援 JPG、PNG、GIF</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" id="createBtn">
+                        建立短網址
+                    </button>
+                </form>
+
+                <div id="resultCard" class="result-card">
+                    <h3>短網址已建立！</h3>
+                    <div class="result-url">
+                        <input type="text" id="resultUrl" readonly>
+                        <button type="button" class="btn btn-secondary" id="copyBtn">
+                            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#174879">
+                                <path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/>
+                            </svg>
+                            複製
+                        </button>
+                    </div>
+                    <div id="copyStatus" class="copy-status"></div>
+                    <div id="resultMeta" class="url-meta"></div>
+                </div>
+            </div>
+
+            <div id="manageTab" class="tab-content">
+                <div id="alertSuccess2" class="alert alert-success">
+                    <span id="alertSuccessText2"></span>
+                </div>
+                <div id="alertError2" class="alert alert-error">
+                    <span id="alertErrorText2"></span>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn btn-secondary" id="refreshBtn">
+                        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#174879">
+                            <path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/>
+                        </svg>
+                        重新載入
+                    </button>
+                </div>
+
+                <div id="urlList" class="url-list">
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-state-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="96px" viewBox="0 -960 960 960" width="96px" fill="#94a3b8">
+                            <path d="m770-302-60-62q40-11 65-42.5t25-73.5q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 57-29.5 105T770-302ZM634-440l-80-80h86v80h-6ZM792-56 56-792l56-56 736 736-56 56ZM440-280H280q-83 0-141.5-58.5T80-480q0-69 42-123t108-71l74 74h-24q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h65l79 80H320Z"/>
+                        </svg>
+                    </div>
+                    <p>還沒有建立任何短網址</p>
+                    <p>在「建立短網址」分頁中建立您的第一個短網址吧！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/zyruls/main.js"></script>
+</body>
+</html>

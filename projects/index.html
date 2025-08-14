@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集 - Zyreny</title>
+    <meta name="description" content="這裡有我的完整作品集，裡面有一些奇怪或有趣的網頁作品">
+    <meta name="keywords" content="Zyreny, 作品集, 網頁設計, 前端開發, 程式設計">
+    <meta name="author" content="Zyreny">
+    <meta name="language" content="zh-TW">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/projects.css">
+</head>
+<body>
+    <div nav></div>
+
+    <main>
+        <div class="projects">
+            <h1 class="title">作品集</h1>
+            <p class="desc">這裡有我全部的作品。</p>
+            
+            <div class="projs-list">
+
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/projects.js"></script>
+    <script>
+        initPage("作品集 - Zyreny", "這裡有我的完整作品集，裡面有一些奇怪或有趣的網頁作品");
+        loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
+        loadNav([
+            { id: "home", name: "首頁", href: "/" }
+        ]);
+    </script>
+</body>
+</html>

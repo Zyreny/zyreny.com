@@ -4,13 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zyreny</title>
-    <meta name="description" content="我是Zyreny，一個喜歡程式的國中生，這裡有一些奇怪有趣的網頁專案作品。">
+    <meta name="description" content="我是Zyreny，一個喜歡程式設計的國中生，這裡有一些奇怪有趣的網頁專案作品。">
     <meta name="keywords" content="Zyreny, 程式設計, 前端開發, 網頁設計, Vue.js, C++, 平面設計, 攝影, 臺中, 國中生, 作品集">
     <meta name="author" content="Zyreny">
     <meta name="robots" content="index, follow">
     <meta name="language" content="zh-TW">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/home.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png"  href="/assets/favicon/favicon.ico">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zyreny.com/">
+    <meta property="og:title" content="Zyruls 縮網址">
+    <meta property="og:description" content="Zyruls 是一個用來縮短網址的工具，把原本可能近100個字的連結縮短成約10個字、甚至更少！">
+    <meta property="og:image" content="https://zyreny.com/assets/img/logo/og_img.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Zyreny">
+    <meta property="og:site_name" content="Zyreny">
+    <meta property="og:locale" content="zh_TW">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zyreny.com/">
+    <meta property="twitter:title" content="Zyruls 縮網址">
+    <meta property="twitter:description" content="Zyruls 是一個用來縮短網址的工具，把原本可能近100個字的連結縮短成約10個字、甚至更少！">
+    <meta property="twitter:image" content="https://zyreny.com/assets/img/logo/og_img.png">
+    <meta property="twitter:image:width" content="1200">
+    <meta property="twitter:image:height" content="630">
+    <meta property="twitter:image:type" content="image/png">
+
+    <meta name="theme-color" content="#2885e2">
+    <meta name="msapplication-TileColor" content="#2885e2">
+    <meta name="application-name" content="Zyreny">
+    <link rel="canonical" href="https://zyreny.com/">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "website",
+        "name": "Zyreny",
+        "alternateName": "Zyreny",
+        "url": "https://zyreny.com",
+        "image": "https://zyreny.com/assets/img/logo/Zyreny_full.svg",
+        "description": "Zyruls 是一個用來縮短網址的工具，把原本可能近100個字的連結縮短成約10個字、甚至更少！",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "臺中",
+            "addressCountry": "TW"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hi@zyreny.com",
+            "contactType": "customer service"
+        }
+    }
+    </script>
 </head>
 <body>
     <div nav></div>
@@ -38,14 +94,25 @@
             <h1 class="title">作品集</h1>
             <p class="desc">這裡會放我最新的四個作品，各有特色。</p>
             <div class="projs-list"></div>
-            <!-- <a href="" class="view-all">看全部<img src="/assets/img/home/arrow.svg" alt=">"></a> -->
+            <!-- <a href="/projects/" class="view-all">看全部<img src="/assets/img/home/arrow.svg" alt=">"></a> -->
         </div>
 
         <div class="store" id="Store">
             <h1 class="title">商店</h1>
             <p class="desc">讓我賺點外快吧，現在的服務有以下這幾個：<span class="br"></span>商店功能還在開發，如果要下單請到<a href="https://discord.gg/6yNPNpRVWs">Discord</a>了解</p>
 
-            <div class="products-list"></div>
+            <div class="products-list">
+                <div class="product">
+                    <img src="/assets/img/home/web.svg" alt="web" class="product-img">
+                    <h2>網頁開發、網站架設</h2>
+                    <p>如果你需要一個網站，無論是個人網站、商業網站或是其他網站，我都可以幫你做。</p>
+                </div>
+                <div class="product">
+                    <img src="/assets/img/home/design.svg" alt="design" class="product-img">
+                    <h2>平面設計</h2>
+                    <p>如果你需要平面設計，海報、名片等等，我都可以幫你設計。</p>
+                </div>
+            </div>
         </div>
 
         <div class="news" id="News">
@@ -70,11 +137,11 @@
 
     <footer></footer>
 
-    <script src="/home/script.js"></script>
+    <script src="/assets/js/home.js"></script>
     <script src="/assets/js/main.js"></script>
     <script>
+        initPage("Zyreny - 創造、探索、突破", "我是Zyreny，一個喜歡程式設計的國中生，專注於網頁前端開發、平面設計。這裡有我的作品集和最新消息。"); 
         loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
-        initPage("Zyreny - 創造、探索、突破", "我是Zyreny，一個喜歡程式的國中生，專注於網頁前端開發、平面設計。這裡有我的作品集和最新消息。"); 
         loadNav([
             { id: "home", name: "首頁", href: "#" }, 
             { id: "about", name: "關於我", href: "#About" },
