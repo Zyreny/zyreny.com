@@ -147,7 +147,7 @@
     transition: 0.4s; 
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .proj:hover {
     background-color: var(--proj-hover);
@@ -227,6 +227,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     gap: 1rem;
     transition: transform 0.3s ease;
 }
@@ -273,7 +274,7 @@
     padding: 1.5rem 2rem;
     background-color: var(--block-bg);
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
@@ -455,6 +456,10 @@
 @media screen and (max-width: 768px) {
     .top {
         height: calc(100vh - 60px);
+    }
+
+    .proj {
+        padding: 1.8rem 1.5rem;
     }
 }
 @media screen and (max-width: 550px) {
