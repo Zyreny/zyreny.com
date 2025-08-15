@@ -115,7 +115,7 @@ bottom-nav a {
 
 .title {
     color: var(--title-color);
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     font-size: 2.8rem;
     text-align: center;
 }
