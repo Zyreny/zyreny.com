@@ -113,6 +113,13 @@ bottom-nav a {
     font-size: 0.9rem;
 }
 
+.title {
+    color: var(--title-color);
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    text-align: center;
+}
+
 footer {
     background-color: var(--theme-color);
     box-shadow: 0 0 10px var(--theme-color);
