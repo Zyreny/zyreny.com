@@ -9,15 +9,14 @@
     <meta name="author" content="Zyreny">
     <meta name="robots" content="index, follow">
     <meta name="language" content="zh-TW">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/home.css?v=1.0">
+    <link rel="preload" href="/assets/css/min/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/assets/css/min/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/min/style.css"></noscript>
+    <noscript><link rel="stylesheet" href="/assets/css/min/home.css"></noscript>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
-    <link rel="icon" type="image/png"  href="/assets/favicon/favicon.ico">
+    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
     <meta property="og:type" content="website">
@@ -81,7 +80,7 @@
         <div class="about" id="About">
             <h1 class="title">關於我</h1>
             <div>
-                <img src="/assets/img/home/Nyan.gif" alt="Zyreny" class="nyan">
+                <img src="/assets/img/home/Nyan.gif" alt="Zyreny" class="nyan" loading="lazy">
                 <p>嗨，我是 <b>Zyreny</b>，一個來自臺中的普通國中生。<span class="br"></span>
                     喜歡 <b>寫程式、平面設計、攝影、哲學、社會心理學</b>，<span class="br"></span>
                     現在專注在 <b>網頁前端開發</b>、設計風格是極簡風、<span class="br"></span>
@@ -94,7 +93,7 @@
             <h1 class="title">作品集</h1>
             <p class="desc">這裡會放我最新的四個作品，各有特色。</p>
             <div class="projs-list"></div>
-            <a href="/projects/" class="view-all">看全部<img src="/assets/img/home/arrow.svg" alt=">"></a>
+            <a href="/projects/" class="view-all">看全部<img src="/assets/img/home/arrow.svg" alt=">" loading="lazy"></a>
         </div>
 
         <div class="store" id="Store">
@@ -103,12 +102,12 @@
 
             <div class="products-list">
                 <div class="product">
-                    <img src="/assets/img/home/web.svg" alt="web" class="product-img">
+                    <img src="/assets/img/home/web.svg" alt="網頁開發、網站架設" class="product-img" loading="lazy">
                     <h2>網頁開發、網站架設</h2>
                     <p>如果你需要一個網站，無論是個人網站、商業網站或是其他網站，我都可以幫你做。</p>
                 </div>
                 <div class="product">
-                    <img src="/assets/img/home/design.svg" alt="design" class="product-img">
+                    <img src="/assets/img/home/design.svg" alt="平面設計" class="product-img" loading="lazy">
                     <h2>平面設計</h2>
                     <p>如果你需要平面設計，海報、名片等等，我都可以幫你設計。</p>
                 </div>
@@ -126,9 +125,9 @@
             <h1 class="title">聯絡我</h1>
             <p class="desc">如果你對於我有任何問題、建議或想和我聊天，可以用底下這些方式找我：</p>
             <div class="contact-list">
-                <button><a href="mailto:hi@zyreny.com"><img src="/assets/img/contact/email.svg" alt="Email">Email</a></button>
-                <button><a href="https://www.instagram.com/zyrenyy/" target="_blank"><img src="/assets/img/contact/instagram.svg" alt="Instagram">Instagram</a></button>
-                <button><a href="https://discord.gg/XdedtvmPZ6" target="_blank"><img src="/assets/img/contact/discord.svg" alt="Discord">Discord</a></button>
+                <button><a href="mailto:hi@zyreny.com"><img src="/assets/img/contact/email.svg" alt="Email圖標" loading="lazy">Email</a></button>
+                <button><a href="https://www.instagram.com/zyrenyy/" target="_blank"><img src="/assets/img/contact/instagram.svg" alt="Instagram圖標" loading="lazy">Instagram</a></button>
+                <button><a href="https://discord.gg/XdedtvmPZ6" target="_blank"><img src="/assets/img/contact/discord.svg" alt="Discord圖標" loading="lazy">Discord</a></button>
             </div>
 
             <p class="desc return">如果你在這個網站裡面遇到任何問題，可以傳電子郵件到<a href="mailto:support@zyreny.com">這裡</a>回報。</p>
@@ -137,19 +136,21 @@
 
     <footer></footer>
 
-    <script src="/assets/js/home.js"></script>
     <script src="/assets/js/main.js"></script>
     <script>
-        initPage("Zyreny - 創造、探索、突破", "我是Zyreny，一個喜歡程式設計的國中生，專注於網頁前端開發、平面設計。這裡有我的作品集和最新消息。"); 
-        loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
-        loadNav([
-            { id: "home", name: "首頁", href: "#" }, 
-            { id: "about", name: "關於我", href: "#About" },
-            { id: "projects", name: "作品", href: "#Projects" },
-            { id: "store", name: "商店", href: "#Store" },
-            { id: "news", name: "新聞", href: "#News" },
-            { id: "contact", name: "聯絡", href: "#Contact" }
-        ]);
+        document.addEventListener("DOMContentLoaded", () => {
+            initPage("Zyreny - 創造、探索、突破", "我是Zyreny，一個喜歡程式設計的國中生，專注於網頁前端開發、平面設計。這裡有我的作品集和最新消息。"); 
+            loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
+            loadNav([
+                { id: "home", name: "首頁", href: "#" }, 
+                { id: "about", name: "關於我", href: "#About" },
+                { id: "projects", name: "作品", href: "#Projects" },
+                { id: "store", name: "商店", href: "#Store" },
+                { id: "news", name: "新聞", href: "#News" },
+                { id: "contact", name: "聯絡", href: "#Contact" }
+            ]);
+        }); 
     </script>
+    <script src="/assets/js/home.js" defer></script>
 </body>
 </html>

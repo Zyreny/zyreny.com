@@ -12,7 +12,7 @@ async function fetchProjs(url) {
         projsList.innerHTML += `
         <a href="/${proj.name}" class="proj">
             <div>
-                <img src="/assets/img/projs/${proj.name}.webp" alt="${proj.title}">
+                <img src="/assets/img/projs/${proj.name}.webp" alt="${proj.title}" loading="lazy">
                 <h2>${proj.title}</h2>
                 <p>${proj.desc}</p>
             </div>

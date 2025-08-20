@@ -10,7 +10,7 @@ function loadFonts(fontsList) {
     head.innerHTML += `
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=${fontslink}&display=swap" rel="stylesheet">`; 
+    <link href="https://fonts.googleapis.com/css2?family=${fontslink}&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">`; 
 }
 
 function initPage(title, desc, theme = "#2885e2") {
@@ -55,12 +55,12 @@ function loadNav(btns) {
     const nav = document.querySelector("[nav]"); 
     
     const navHTML = btns.map(btn => `<a href="${btn.href}"><li>${btn.name}</li></a>`).join("");
-    const btmNavHTML = btns.map(btn => `<a href="${btn.href}"><li><img src="https://zyreny.com/assets/img/menu/${btn.id}.svg" alt="${btn.name}">${btn.name}</li></a>`).join("");
+    const btmNavHTML = btns.map(btn => `<a href="${btn.href}"><li><img src="https://zyreny.com/assets/img/menu/${btn.id}.svg" alt="${btn.name}" loading="lazy">${btn.name}</li></a>`).join("");
 
     nav.innerHTML = `
     <header>
         <h1>Zyreny</h1>
-        <a href="#"><img src="https://zyreny.com/assets/img/logo/zyreny_full.svg" alt="Zyreny"></a>
+        <a href="#"><img src="https://zyreny.com/assets/img/logo/zyreny_full.svg" alt="Zyreny" loading="lazy"></a>
         <nav><ul>${navHTML}</ul></nav>
     </header>
     <bottom-nav><ul>${btmNavHTML}</ul></bottom-nav>`; 
