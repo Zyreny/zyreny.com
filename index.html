@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://zyreny.com/">
     <link rel="stylesheet" href="/assets/css/min/home.min.css">
     <link rel="preload" href="/assets/css/min/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/min/style.min.css"></noscript>
 
     <link rel="icon" href="/assets/favicon/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon/icon.svg" />
@@ -135,21 +136,7 @@
 
     <footer></footer>
 
-    <script src="/assets/js/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            initPage("Zyreny - 創造、探索、突破", "我是Zyreny，一個喜歡程式設計的國中生，專注於網頁前端開發、平面設計。這裡有我的作品集和最新消息。"); 
-            loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
-            loadNav([
-                { id: "home", name: "首頁", href: "#" }, 
-                { id: "about", name: "關於我", href: "#About" },
-                { id: "projects", name: "作品", href: "#Projects" },
-                { id: "store", name: "商店", href: "#Store" },
-                { id: "news", name: "新聞", href: "#News" },
-                { id: "contact", name: "聯絡", href: "#Contact" }
-            ]);
-        }); 
-    </script>
-    <script src="/assets/js/home.js" defer></script>
+    <script src="/assets/js/min/main.min.js" defer></script>
+    <script src="/assets/js/min/home.min.js" defer></script>
 </body>
 </html>

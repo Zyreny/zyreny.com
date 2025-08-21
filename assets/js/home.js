@@ -1,3 +1,15 @@
+
+initPage("Zyreny - 創造、探索、突破", "我是Zyreny，一個喜歡程式設計的國中生，專注於網頁前端開發、平面設計。這裡有我的作品集和最新消息。"); 
+loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
+loadNav([
+    { id: "home", name: "首頁", href: "#" }, 
+    { id: "about", name: "關於我", href: "#About" },
+    { id: "projects", name: "作品", href: "#Projects" },
+    { id: "store", name: "商店", href: "#Store" },
+    { id: "news", name: "新聞", href: "#News" },
+    { id: "contact", name: "聯絡", href: "#Contact" }
+]);
+
 const API_URL = "https://api.zyreny.com/data";
 
 // 翻頁相關變數
