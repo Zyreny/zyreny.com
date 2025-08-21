@@ -1,10 +1,12 @@
-initPage("縮網址服務 - Zyreny", "Zyreny 提供的免費網址縮短服務，支援自訂連結、密碼保護、統計分析", "#2885e2"); 
-loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
-loadNav([
-    { id: "home", name: "首頁", href: "/" }, 
-    { id: "projects", name: "作品", href: "/#Projects" },
+document.addEventListener("DOMContentLoaded", () => {
+    initPage("縮網址服務 - Zyreny", "Zyreny 提供的免費網址縮短服務，支援自訂連結、密碼保護、統計分析", "#2885e2"); 
+    loadFonts(["Fira Code", "Huninn", "Noto Sans TC"]);
+    loadNav([
+        { id: "home", name: "首頁", href: "/" }, 
+        { id: "projects", name: "作品", href: "/#Projects" },
     { id: "contact", name: "聯絡", href: "/#Contact" }
-]);
+    ]);
+});
 
 const API_BASE_URL = 'https://api.zyreny.com/url_shortener';
 
