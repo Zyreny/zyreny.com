@@ -14,6 +14,7 @@ import {
     Threads,
     X,
     Medium,
+    SEO,
 } from "@comp";
 
 const navBtns = [
@@ -28,6 +29,12 @@ const navBtns = [
 function Index() {
     return (
         <>
+            <SEO 
+                title="Zyreny - 首頁"
+                description="我是Zyreny，一個喜歡程式設計的國中生，這裡有一些奇怪有趣的網頁專案作品。"
+                url="/"
+                image="/og_img.png"
+            />
             <div className={styles.top}>
                 <div className={styles["top-overlay"]}></div>
                 <h1>Zyreny</h1>
