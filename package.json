@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && react-snap",
+    "build:app": "tsc -b && vite build",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -24,8 +26,26 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "react-snap": "^1.23.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "dist",
+    "crawlFrom": "/",
+    "include": [
+      "/",
+      "/projects"
+    ],
+    "userAgent": "ReactSnap",
+    "headless": true,
+    "waitFor": 3000,
+    "fixWebpackChunksIssue": false,
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }

@@ -14,12 +14,15 @@ function useSEO({
     title = "Zyreny",
     description = "我是Zyreny，一個喜歡程式設計的國中生，這裡有一些奇怪有趣的網頁專案作品。",
     image = "/og_img.png",
-    url = window.location.pathname,
+    url = typeof window !== 'undefined' ? window.location.pathname : "/",
     type = "website",
     siteName = "Zyreny",
     locale = "zh_TW"
 }: SEOProps) {
-    useEffect(() => {
+    // 在服務端渲染時立即執行，不等待 useEffect
+    const updateSEO = () => {
+        if (typeof document === 'undefined') return;
+        
         const baseUrl = "https://zyreny.com";
         const fullImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
         const fullUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
@@ -101,7 +104,16 @@ function useSEO({
                 "name": "Zyreny"
             }
         });
+    };
 
+    // 立即執行一次（對 react-snap 很重要）
+    if (typeof document !== 'undefined') {
+        updateSEO();
+    }
+
+    // 在客戶端也執行
+    useEffect(() => {
+        updateSEO();
     }, [title, description, image, url, type, siteName, locale]);
 }
 
