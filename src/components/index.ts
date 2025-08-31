@@ -13,4 +13,3 @@ export { default as Instagram } from "./icon/Instagram";
 export { default as Threads } from "./icon/Threads";
 export { default as X } from "./icon/X";
 export { default as Medium } from "./icon/Medium";
-export { default as SEO } from "./SEO";

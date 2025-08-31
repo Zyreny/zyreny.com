@@ -1,18 +1,19 @@
 import { useLocation } from 'react-router';
-import { SEO } from '@comp';
+import useSEO from '@/hooks/useSEO';
 
 function NotFound() {
     const location = useLocation();
 
+    // SEO 設定
+    useSEO({
+        title: "Zyreny - 頁面不存在",
+        description: "很抱歉，您訪問的頁面不存在。請返回首頁查看其他內容。",
+        url: location.pathname,
+        image: "/og_img.png"
+    });
+
     return (
-        <>
-            <SEO 
-                title="Zyreny - 頁面不存在"
-                description="很抱歉，您訪問的頁面不存在。請返回首頁查看其他內容。"
-                url={location.pathname}
-                image="/og_img.png"
-            />
-            <div style={{ textAlign: 'center', padding: '50px' }}>
+        <div style={{ textAlign: 'center', padding: '50px' }}>
                 <h1 style={{ fontSize: '72px', margin: '0', color: '#ccc' }}>404</h1>
                 <h2>頁面不存在</h2>
                 <p>很抱歉，您訪問的頁面不存在。</p>
@@ -27,7 +28,6 @@ function NotFound() {
                     </a>
                 </nav>
             </div>
-        </>
     );
 }
 

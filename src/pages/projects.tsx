@@ -1,15 +1,16 @@
-import { SEO } from "@comp";
+import useSEO from "@/hooks/useSEO";
 
 function Projects() {
+    // SEO 設定
+    useSEO({
+        title: "Zyreny - 作品集",
+        description: "查看 Zyreny 的程式設計作品，包含網頁開發、應用程式和各種有趣的專案。",
+        url: "/projects",
+        image: "/og_img.png"
+    });
+
     return (
-        <>
-            <SEO 
-                title="Zyreny - 作品集"
-                description="查看 Zyreny 的程式設計作品，包含網頁開發、應用程式和各種有趣的專案。"
-                url="/projects"
-                image="/og_img.png"
-            />
-            <div style={{ padding: '50px', textAlign: 'center' }}>
+        <div style={{ padding: '50px', textAlign: 'center' }}>
                 <h1>作品集</h1>
                 <p>這裡將展示我的各種程式設計作品...</p>
                 
@@ -37,7 +38,6 @@ function Projects() {
                     </a>
                 </nav>
             </div>
-        </>
     );
 }
 
