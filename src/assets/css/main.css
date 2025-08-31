@@ -1,6 +1,11 @@
 :root {
     --theme-color: #2885e2;
-    --bg-color: #f5f5f5; 
+    --bg-color: #f5f5f5;
+    --btn-color: #1f68b2;
+    --btn-hover: #a4d1ff4d;
+    --font-huninn: "Huninn", "Chiron GoRound TC", "Noto Sans TC", Arial, Helvetica, sans-serif;
+    --font-goround: "Chiron GoRound TC", "Huninn", "Noto Sans TC", Arial, Helvetica, sans-serif;
+    --font-noto-sans: "Noto Sans TC", Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -10,9 +15,30 @@
 }
 
 body {
-    font-family: "Noto Sans TC", sans-serif;
-    /* background-color: var(--bg-color); */
-    background-color: yellow;
-    color: var(--text-color);
+    min-height: 100vh;
+    font-family: var(--font-noto-sans);
+    background-color: var(--bg-color);
+    color: #174879;
     padding-top: 80px;
+}
+
+.title {
+    color: #103458;
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    text-align: center;
+}
+.desc {
+    color: var(--text-color);
+    font-size: 1.21em;
+    text-align: center;
+    margin-bottom: 4rem;
+    line-height: 1.8rem;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin-bottom: 60px;
+        padding-top: 60px;
+    }
 }

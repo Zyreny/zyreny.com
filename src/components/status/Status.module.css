@@ -1,0 +1,9 @@
+.status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-huninn);
+    font-size: 1.5rem;
+    margin: 3rem 0;
+}

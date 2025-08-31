@@ -1,0 +1,178 @@
+.top {
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: linear-gradient(135deg, #e7f3ff, #9cceff);
+    color: #10365d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 3;
+}
+.top::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #e7f3ff, #9cceff);
+    filter: blur(5px);
+    z-index: -1;
+}
+.top h1 {
+    font-size: 2.7rem;
+    font-family: "Fira Code", monospace;
+    width: 0;
+    overflow: hidden;
+    animation: 3s typing steps(6) infinite alternate;
+    position: relative;
+    white-space: nowrap;
+}
+.top h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #10365d;
+    animation: 1.2s blink steps(1, end) infinite;
+}
+.top h2 {
+    font-size: 1.6rem;
+    opacity: 0.7;
+}
+
+.block {
+    width: 100%;
+    padding: 8rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.even {
+    background-color: #fff;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    letter-spacing: 0.3em;
+    line-height: 2.1rem;
+    font-size: 1.2rem;
+}
+.about img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 100%;
+    box-shadow: 0 0 8px #013366;
+    -webkit-user-drag: none;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+.about img:hover {
+    transform: scale(1.02);
+}
+.br::after {
+    content: "\A";
+    white-space: pre;
+}
+.links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 8rem;
+}
+
+.projects {
+    padding: 8rem 7%;
+}
+.view-all {
+    color: var(--btn-color);
+    font-family: var(--font-huninn);
+    font-size: 1.7rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    transition: 0.3s ease;
+    padding: 0.4em 1em;
+    border-radius: 10rem;
+    margin-top: 2rem;
+}
+.view-all img {
+    width: 1.4rem;
+    height: 1.4rem;
+    transition: transform 0.3s ease;
+}
+.view-all:hover {
+    background-color: var(--btn-hover);
+}
+.view-all:hover img {
+    transform: translateX(8px);
+}
+
+.contact-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    75% {
+        width: 6ch;
+    }
+    100% {
+        width: 6ch;
+    }
+}
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .about h1 {
+        align-items: center;
+        margin-bottom: 5rem;
+    }
+    .profile {
+        flex-direction: column;
+        text-align: center;
+        letter-spacing: 0.2em;
+        gap: 2.5rem;
+    }
+    .links {
+        margin-top: 5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .top {
+        height: calc(100vh - 60px);
+    }
+}
+@media screen and (max-width: 635px) {
+    .br::after {
+        content: "";
+    }
+}
