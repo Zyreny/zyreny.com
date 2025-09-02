@@ -21,7 +21,6 @@ const navBtns = [
     { id: "home", name: "首頁", path: "#" },
     { id: "about", name: "關於", path: "#About" },
     { id: "projects", name: "作品", path: "#Projects" },
-    { id: "store", name: "商店", path: "#Store" },
     { id: "news", name: "新聞", path: "#News" },
     { id: "contact", name: "聯絡", path: "#Contact" },
 ];
