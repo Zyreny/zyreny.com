@@ -1,10 +1,10 @@
 :root {
-    --header-bg: #2885e2b8;
+    --nav-bg: #2885e2b8;
 }
 
 .header, .btm-nav {
-    background-color: var(--header-bg);
-    box-shadow: 0 0 10px var(--header-bg);
+    background-color: var(--nav-bg);
+    box-shadow: 0 0 10px var(--nav-bg);
 }
 
 .header {

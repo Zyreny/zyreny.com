@@ -1,29 +1,29 @@
-import { useRoutes, useLocation } from "react-router";
+import { Outlet, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import routes from "./pages/routes";
-import Header from "./layout/Nav";
+import Nav from "./layout/Nav";
 import Footer from "./layout/Footer";
+import { getNavBtns, type NavBtn } from "@pages/routes";
 
 import "@assets/css/main.css";
 
 function App() {
-    const element = useRoutes(routes);
     const location = useLocation();
-    const currentRoute = routes.find(
-        (route: { path: string }) => route.path === location.pathname
-    );
+    const [navBtns, setNavBtns] = useState<NavBtn[]>([
+        { id: "home", name: "首頁", path: "/" },
+        { id: "projects", name: "作品", path: "/projects" },
+    ]);
+
+    useEffect(() => {
+        setNavBtns(getNavBtns(location.pathname));
+    }, [location.pathname]);
 
     return (
         <>
-            <Header
-                navBtns={
-                    currentRoute?.navBtns || [
-                        { id: "home", name: "首頁", path: "/" },
-                        { id: "projects", name: "作品", path: "/projects" }
-                    ]
-                }
-            />
-            <main>{element}</main>
+            <Nav navBtns={navBtns} />
+            <main>
+                <Outlet />
+            </main>
             <Footer />
         </>
     );

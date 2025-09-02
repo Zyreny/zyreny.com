@@ -1,3 +1,4 @@
+export { default as SEO } from "./SEO";
 export { default as AutoOrder } from "./home/AutoOrder";
 export { default as IndexBlock } from "./home/IndexBlock";
 export { default as Project } from "./Project";
@@ -13,3 +14,4 @@ export { default as Instagram } from "./icon/Instagram";
 export { default as Threads } from "./icon/Threads";
 export { default as X } from "./icon/X";
 export { default as Medium } from "./icon/Medium";
+export { default as HomeButton } from "./HomeButton";

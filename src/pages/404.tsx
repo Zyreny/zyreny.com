@@ -1,33 +1,113 @@
-import { useLocation } from 'react-router';
-import useSEO from '@/hooks/useSEO';
+import { SEO, HomeButton } from "@comp";
+import { useState, useEffect, useMemo } from "react";
+
+import styles from "./404.module.css";
 
 function NotFound() {
-    const location = useLocation();
+    const path = window.location.pathname;
+    const [displayedLines, setDisplayedLines] = useState<string[]>([]);
+    const [currentLineIndex, setCurrentLineIndex] = useState(0);
+    const [currentCharIndex, setCurrentCharIndex] = useState(0);
 
-    // SEO 設定
-    useSEO({
-        title: "Zyreny - 頁面不存在",
-        description: "很抱歉，您訪問的頁面不存在。請返回首頁查看其他內容。",
-        url: location.pathname,
-        image: "/og_img.png"
-    });
+    const lines = useMemo(
+        () => [
+            `$ curl https://zyreny.com${path}`,
+            "錯誤代碼 404: 找不到頁面",
+            "$ echo 按下方按鈕返回首頁",
+            "按下方按鈕返回首頁",
+        ],
+        [path]
+    );
+
+    const isCommandLine = (line: string | undefined) => line?.startsWith("$");
+
+    useEffect(() => {
+        const currentLine = lines[currentLineIndex];
+        if (!currentLine) return;
+
+        const isCommand = isCommandLine(currentLine);
+        const delay = isCommand ? 90 : 0;
+
+        if (isCommand && currentCharIndex < currentLine.length) {
+            const timer = setTimeout(() => {
+                setDisplayedLines((prev) => {
+                    const newLines = [...prev];
+                    newLines[currentLineIndex] = currentLine.slice(
+                        0,
+                        currentCharIndex + 1
+                    );
+                    return newLines;
+                });
+                setCurrentCharIndex((prev) => prev + 1);
+            }, delay);
+
+            return () => clearTimeout(timer);
+        } else {
+            if (!isCommand) {
+                setDisplayedLines((prev) => {
+                    const newLines = [...prev];
+                    newLines[currentLineIndex] = currentLine;
+                    return newLines;
+                });
+            }
+
+            const timer = setTimeout(
+                () => {
+                    setCurrentLineIndex((prev) => prev + 1);
+                    setCurrentCharIndex(0);
+                },
+                isCommand ? 800 : 300
+            );
+
+            return () => clearTimeout(timer);
+        }
+    }, [currentLineIndex, currentCharIndex, lines]);
 
     return (
-        <div style={{ textAlign: 'center', padding: '50px' }}>
-                <h1 style={{ fontSize: '72px', margin: '0', color: '#ccc' }}>404</h1>
-                <h2>頁面不存在</h2>
-                <p>很抱歉，您訪問的頁面不存在。</p>
-                <p style={{ color: '#666', fontSize: '14px' }}>
-                    嘗試訪問的路徑：<code style={{ background: '#f5f5f5', padding: '2px 4px', borderRadius: '3px' }}>
-                        {location.pathname}
-                    </code>
-                </p>
-                <nav>
-                    <a href="/" style={{ textDecoration: 'none', color: '#007bff' }}>
-                        回到首頁
-                    </a>
-                </nav>
+        <>
+            <SEO
+                title="找不到頁面 - Zyreny"
+                desc="這個頁面不存在或是已經被刪除了，但你還是可以返回首頁看關於我的介紹和作品集。"
+            />
+
+            <div className={styles.container}>
+                <div className={styles.terminal}>
+                    <div className={styles["title-bar"]}>
+                        <button
+                            type="button"
+                            name="關閉"
+                            className={styles.close}
+                        ></button>
+                        <button
+                            type="button"
+                            name="最小化"
+                            className={styles.min}
+                        ></button>
+                        <button
+                            type="button"
+                            name="最大化"
+                            className={styles.max}
+                        ></button>
+                    </div>
+                    <div className={styles["screen"]}>
+                        {displayedLines.map((line, index) => (
+                            <p key={index}>
+                                {line}
+                                {index === currentLineIndex &&
+                                    currentLineIndex < lines.length &&
+                                    lines[currentLineIndex] &&
+                                    currentCharIndex <
+                                        lines[currentLineIndex].length &&
+                                    isCommandLine(lines[currentLineIndex]) && (
+                                        <span className={styles.cursor}></span>
+                                )}
+                            </p>
+                        ))}
+                    </div>
+                </div>
+                <HomeButton />
             </div>
+        </>
     );
 }
 

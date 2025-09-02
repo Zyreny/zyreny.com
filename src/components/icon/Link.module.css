@@ -1,7 +1,6 @@
 .link {
-    height: 100%;
     aspect-ratio: 1;
-    padding: 1rem;
+    padding: 0.5rem;
     transition: .3s;
 }
 .link:hover {

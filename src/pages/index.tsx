@@ -1,10 +1,10 @@
 import styles from "./Index.module.css";
-import useSEO from "@/hooks/useSEO";
 
 import nyan from "@assets/img/home/nyan.gif";
 import arrow from "@assets/img/home/arrow.svg";
 
 import {
+    SEO,
     AutoOrder,
     IndexBlock,
     NewsList,
@@ -27,16 +27,10 @@ const navBtns = [
 ];
 
 function Index() {
-    // SEO 設定
-    useSEO({
-        title: "Zyreny - 首頁",
-        description: "我是Zyreny，一個喜歡程式設計的國中生，這裡有一些奇怪有趣的網頁專案作品。",
-        url: "/",
-        image: "/og_img.png"
-    });
-
     return (
         <>
+            <SEO />
+
             <div className={styles.top}>
                 <div className={styles["top-overlay"]}></div>
                 <h1>Zyreny</h1>
@@ -74,7 +68,7 @@ function Index() {
                     className="projects"
                     id="Projects"
                 >
-                    <ProjectsList />
+                    <ProjectsList endpoint="4" />
 
                     <a href="/projects" className={styles["view-all"]}>
                         看全部

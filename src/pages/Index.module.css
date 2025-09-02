@@ -96,14 +96,14 @@
 .view-all {
     color: var(--btn-color);
     font-family: var(--font-huninn);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
     transition: 0.3s ease;
-    padding: 0.4em 1em;
+    padding: 0.5em 1.2em;
     border-radius: 10rem;
     margin-top: 2rem;
 }

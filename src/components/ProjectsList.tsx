@@ -3,14 +3,14 @@ import { getProjects } from "@/api";
 import { Loading, Error, NoData, Project } from "@comp";
 import styles from "./ProjectsList.module.css";
 
-function ProjectsList() {
+function ProjectsList({ endpoint }: { endpoint: string }) {
     const [projs, setProjs] = useState<{ [key: string]: string }[] | null>(
         null
     );
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        getProjects()
+        getProjects(endpoint)
             .then((data) => {
                 setProjs(data || []);
                 setLoading(false);
@@ -19,7 +19,7 @@ function ProjectsList() {
                 setProjs(null);
                 setLoading(false);
             });
-    }, []);
+    }, [endpoint]);
 
     return loading ? (
         <Loading />

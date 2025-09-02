@@ -1,6 +1,6 @@
 import styles from "./Nav.module.css";
 
-function Header({
+function Nav({
     navBtns = [
         { id: "home", name: "首頁", path: "/" },
         { id: "projects", name: "作品", path: "/projects" }
@@ -51,4 +51,4 @@ function Header({
     );
 }
 
-export default Header;
+export default Nav;
