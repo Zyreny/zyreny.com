@@ -13,10 +13,7 @@ function App() {
         <>
             <Nav
                 navBtns={
-                    pageNavBtns[location.pathname] || [
-                        { id: "home", name: "首頁", path: "/" },
-                        { id: "projects", name: "作品", path: "/projects" },
-                    ]
+                    pageNavBtns[location.pathname]
                 }
             />
             <main>
