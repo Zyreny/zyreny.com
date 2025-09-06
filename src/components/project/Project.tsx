@@ -31,7 +31,7 @@ function Project({ name, title, desc }: Record<string, string>) {
     };
 
     return (
-            <a href={name} className={styles.proj}>
+            <a href={`/${name}`} className={styles.proj}>
                 {imgSrc && <img src={imgSrc} alt={`${title}作品縮圖`} />}
                 <h2>{title}</h2>
                 <p>{renderDesc()}</p>
