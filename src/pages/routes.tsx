@@ -56,14 +56,5 @@ function generateRoutes() {
 
 const { routes, pageNavBtns } = generateRoutes();
 
-export function getNavBtns(path: string): NavBtn[] {
-    return (
-        pageNavBtns[path] || [
-            { id: "home", name: "首頁", path: "/" },
-            { id: "projects", name: "作品", path: "/projects" },
-        ]
-    );
-}
-
-export { routes };
+export { routes, pageNavBtns };
 export type { NavBtn, PageComponent };

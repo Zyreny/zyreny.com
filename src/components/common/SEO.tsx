@@ -7,20 +7,21 @@ interface SEOProps {
     image?: string;
     url?: string;
     theme?: string;
-    bodyBg?: string; 
-    navBg?: string;  
-    footerBg?: string; 
+    bodyBg?: string;
+    textColor?: string;
+    navBg?: string;
+    footerBg?: string;
 }
 
 const defaultSEO = {
     title: "Zyreny",
-    desc:
-        "我是 Zyreny，一名喜歡寫程式的國中生，專注在網頁開發與實驗性專案，這個網站會放我一些有趣的作品集。",
+    desc: "我是 Zyreny，一名喜歡寫程式的國中生，專注在網頁開發與實驗性專案，這個網站會放我一些有趣的作品集。",
     image: "https://react.zyreny.com/og_img.png",
     url: "https://react.zyreny.com",
     theme: "#2885e2",
-    bodyBg: "#f5f5f5", 
-    navBg: "#2885e2b8", 
+    bodyBg: "#f5f5f5",
+    textColor: "#174879",
+    navBg: "#2885e2b8",
     footerBg: "#2885e2",
 };
 
@@ -31,6 +32,7 @@ export default function SEO({
     url = defaultSEO.url,
     theme = defaultSEO.theme,
     bodyBg = defaultSEO.bodyBg,
+    textColor = defaultSEO.textColor,
     navBg = defaultSEO.navBg,
     footerBg = defaultSEO.footerBg,
 }: SEOProps) {
@@ -44,36 +46,20 @@ export default function SEO({
         description: desc,
     };
 
-    // 設定背景顏色
     useEffect(() => {
-        // 設定 body 背景顏色
         if (bodyBg) {
-            document.documentElement.style.setProperty('--bg-color', bodyBg);
+            document.documentElement.style.setProperty("--bg-color", bodyBg);
         }
-        
-        // 設定 Nav 背景顏色 CSS 變數
+        if (textColor) {
+            document.documentElement.style.setProperty("--text-color", textColor);
+        }
         if (navBg) {
-            document.documentElement.style.setProperty('--nav-bg', navBg);
+            document.documentElement.style.setProperty("--nav-bg", navBg);
         }
-        
-        // 設定 Footer 背景顏色 CSS 變數
         if (footerBg) {
-            document.documentElement.style.setProperty('--footer-bg', footerBg);
+            document.documentElement.style.setProperty("--footer-bg", footerBg);
         }
-        
-        // 清理函數：組件卸載時恢復預設顏色
-        return () => {
-            if (bodyBg) {
-                document.body.style.backgroundColor = 'var(--bg-color)';
-            }
-            if (navBg) {
-                document.documentElement.style.removeProperty('--nav-bg');
-            }
-            if (footerBg) {
-                document.documentElement.style.removeProperty('--footer-bg');
-            }
-        };
-    }, [bodyBg, navBg, footerBg]);
+    }, [bodyBg, textColor, navBg, footerBg]);
 
     return (
         <Head>

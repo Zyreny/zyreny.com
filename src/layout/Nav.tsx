@@ -19,9 +19,9 @@ function Nav({
 
                 <nav className={styles.nav}>
                     <ul>
-                        {navBtns.map((btn) => {
+                        {navBtns.map((btn, i) => {
                             return (
-                                <li key={btn.id} className={styles["nav-btn"]}>
+                                <li key={i} className={styles["nav-btn"]}>
                                     <a href={btn.path}>{btn.name}</a>
                                 </li>
                             );
@@ -32,9 +32,9 @@ function Nav({
 
             <nav className={styles["btm-nav"]}>
                 <ul>
-                    {navBtns.map((btn) => {
+                    {navBtns.map((btn, i) => {
                         return (
-                            <li key={btn.id} className={styles["btm-nav-btn"]}>
+                            <li key={i} className={styles["btm-nav-btn"]}>
                                 <a href={btn.path}>
                                     <img
                                         src={`/img/nav/${btn.id}.svg`}

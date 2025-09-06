@@ -1,7 +1,7 @@
 import styles from "./Project.module.css";
 import { useEffect, useState } from "react";
 
-const imgs = import.meta.glob("../assets/img/proj/*.webp", {
+const imgs = import.meta.glob("@assets/img/projs/*.webp", {
     eager: true,
     query: "?url",
     import: "default",
