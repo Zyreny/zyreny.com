@@ -17,12 +17,12 @@ function loadNav(btns) {
     const nav = document.querySelector("[nav]"); 
     
     const navHTML = btns.map(btn => `<a href="${btn.href}"><li>${btn.name}</li></a>`).join("");
-    const btmNavHTML = btns.map(btn => `<a href="${btn.href}"><li><img src="/img/nav/${btn.id}.svg" alt="${btn.name}" loading="lazy">${btn.name}</li></a>`).join("");
+    const btmNavHTML = btns.map(btn => `<a href="${btn.href}"><li><img src="https://react.zyreny.com/img/nav/${btn.id}.svg" alt="${btn.name}" loading="lazy">${btn.name}</li></a>`).join("");
 
     nav.innerHTML = `
     <header>
         <h1>Zyreny</h1>
-        <a href="#"><img src="/img/logo/zyreny_full.svg" alt="Zyreny" loading="lazy"></a>
+        <a href="#"><img src="https://react.zyreny.com/img/logo/zyreny_full.svg" alt="Zyreny" loading="lazy"></a>
         <nav><ul>${navHTML}</ul></nav>
     </header>
     <bottom-nav><ul>${btmNavHTML}</ul></bottom-nav>`; 
