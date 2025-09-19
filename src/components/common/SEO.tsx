@@ -4,7 +4,7 @@ import { useEffect } from "react";
 interface SEOProps {
     title?: string;
     desc?: string;
-    image?: string;
+    img?: string;
     url?: string;
     theme?: string;
     bodyBg?: string;
@@ -16,7 +16,7 @@ interface SEOProps {
 const defaultSEO = {
     title: "Zyreny",
     desc: "我是 Zyreny，一名喜歡寫程式的國中生，專注在網頁開發與實驗性專案，這個網站會放我一些有趣的作品集。",
-    image: "https://react.zyreny.com/og_img.png",
+    img: "https://react.zyreny.com/og_img.png",
     url: "https://react.zyreny.com",
     theme: "#2885e2",
     bodyBg: "#f5f5f5",
@@ -28,7 +28,7 @@ const defaultSEO = {
 export default function SEO({
     title = defaultSEO.title,
     desc = defaultSEO.desc,
-    image = defaultSEO.image,
+    img = defaultSEO.img,
     url = defaultSEO.url,
     theme = defaultSEO.theme,
     bodyBg = defaultSEO.bodyBg,
@@ -42,7 +42,7 @@ export default function SEO({
         name: "Zyreny",
         alternateName: "Zyreny",
         url: "https://zyreny.com",
-        image: image,
+        image: img,
         description: desc,
     };
 
@@ -68,7 +68,7 @@ export default function SEO({
             <meta property="og:url" content={url} />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={desc} />
-            <meta property="og:image" content={image} />
+            <meta property="og:image" content={img} />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
             <meta property="og:image:type" content="image/png" />
@@ -80,13 +80,12 @@ export default function SEO({
             <meta property="twitter:url" content={url} />
             <meta property="twitter:title" content={title} />
             <meta property="twitter:description" content={desc} />
-            <meta property="twitter:image" content={image} />
+            <meta property="twitter:image" content={img} />
             <meta property="twitter:image:width" content="1200" />
             <meta property="twitter:image:height" content="630" />
             <meta property="twitter:image:type" content="image/png" />
 
             <meta name="theme-color" content={theme} />
-            <meta name="msapplication-TileColor" content={theme} />
             <meta name="application-name" content="Zyreny" />
             <link rel="canonical" href="https://zyreny.com/" />
 

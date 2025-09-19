@@ -40,6 +40,7 @@ main {
     margin-bottom: 3rem;
     font-size: 2.8rem;
     text-align: center;
+    font-weight: bold;
 }
 .desc {
     color: var(--text-color);

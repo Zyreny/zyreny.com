@@ -92,6 +92,8 @@ function Food() {
             <SEO
                 title="拌不拌測驗"
                 desc="這個有趣的拌不拌測驗只需要回答25個問題，就可以快速簡單測出你是「拌人」還是「不拌人」！"
+                img="https://react.zyreny.com/img/og/food.png"
+                url="https://react.zyreny.com/food"
                 bodyBg="#dbe9ff"
             />
 
@@ -112,7 +114,6 @@ function Food() {
                     <button type="submit" className="btn-outline">
                         查看結果
                     </button>
-                    {/* <hr /> */}
                 </form>
                 <HomeButton />
             </div>

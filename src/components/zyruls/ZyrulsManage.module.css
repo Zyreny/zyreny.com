@@ -1,0 +1,41 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0.7;
+    padding: 2rem;
+}
+
+.empty p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.refresh {
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: var(--font-huninn);
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 1.5rem;
+}
+
+.refresh:hover {
+    background-color: var(--bg-color);
+}

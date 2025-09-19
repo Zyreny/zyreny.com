@@ -4,7 +4,7 @@ import { pageNavBtns } from "./pages/routes";
 import Nav from "./layout/Nav";
 import Footer from "./layout/Footer";
 
-import "@assets/css/main.css";
+import "./index.css";
 
 function App() {
     const location = useLocation();
@@ -21,6 +21,7 @@ function App() {
                     pageNavBtns[currentPath] || [
                         { id: "home", name: "首頁", path: "/" },
                         { id: "projects", name: "作品", path: "/projects" },
+                        { id: "about", name: "關於", path: "/#About" },
                     ]
                 }
             />

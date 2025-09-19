@@ -5,7 +5,6 @@ function NoData({ msg, style }: { msg: string, style?: React.CSSProperties }) {
         <div className={styles.status} style={{ color: "#9ca3af", ...style }}>
             <svg
                 fill="#9ca3af"
-                stroke-width="0"
                 viewBox="0 0 16 16"
                 height="60px"
                 width="60px"

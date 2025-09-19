@@ -15,14 +15,14 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Path mapping */
+    /* 路徑別名x */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
       "@comp": ["./src/components"],
       "@pages/*": ["./src/pages/*"],
       "@assets/*": ["./src/assets/*"],
-      "@api": ["./src/api/index"]
+      "@api/*": ["./src/api/*"]
     },
 
     /* Linting */

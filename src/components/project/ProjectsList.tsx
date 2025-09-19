@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProjects } from "@/api";
+import { getProjects} from "@api/projects";
 import { Loading, Error, NoData, Project } from "@comp";
 import styles from "./ProjectsList.module.css";
 

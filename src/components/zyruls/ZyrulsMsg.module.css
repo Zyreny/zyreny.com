@@ -1,0 +1,67 @@
+.msg {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.error {
+    background-color: #ef44441a;
+    color: #dc2626;
+    border: 1px solid #ef444433;
+}
+
+.success {
+    background-color: #10b9811a;
+    color: #059669;
+    border: 1px solid #10b98133;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-out {
+    animation: fadeOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+        max-height: 0;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 100px;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 100px;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+        max-height: 0;
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+    }
+}

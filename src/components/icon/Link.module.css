@@ -1,7 +1,8 @@
 .link {
     aspect-ratio: 1;
     padding: 0.5rem;
-    transition: .3s;
+    display: flex;
+    transition: 0.3s;
 }
 .link:hover {
     transform: scale(1.1);
