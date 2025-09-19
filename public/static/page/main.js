@@ -22,7 +22,7 @@ function loadNav(btns) {
     nav.innerHTML = `
     <header>
         <h1>Zyreny</h1>
-        <a href="#"><img src="https://react.zyreny.com/img/logo/zyreny_full.svg" alt="Zyreny" loading="lazy"></a>
+        <a href="#"><img src="https://react.zyreny.com/img/logo/logo_full.svg" alt="Zyreny" loading="lazy"></a>
         <nav><ul>${navHTML}</ul></nav>
     </header>
     <bottom-nav><ul>${btmNavHTML}</ul></bottom-nav>`; 
