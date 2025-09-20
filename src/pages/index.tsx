@@ -15,6 +15,7 @@ import {
     Threads,
     X,
     Medium,
+    Github,
 } from "@comp";
 
 const navBtns = [
@@ -43,9 +44,9 @@ function Index() {
                         <p>
                             嗨，我是 <b>Zyreny</b>，一個來自臺中的國中生。
                             <span className={styles.br}></span>
-                            喜歡 <b>寫程式、平面設計、攝影、哲學、社會心理學</b>
-                            ，<span className={styles.br}></span>
-                            現在專注在 <b>網頁前端開發</b>、設計風格是極簡風、
+                            喜歡 <b>程式開發、平面設計、攝影、UI/UX、深度報導</b>，
+                            <span className={styles.br}></span>
+                            現在專注在 <b>網頁前端開發</b>、設計喜歡極簡風、
                             <span className={styles.br}></span>
                             正在學習 <b>C++, React</b>
                         </p>
@@ -58,6 +59,7 @@ function Index() {
                         <Threads link={true} />
                         <Medium link={true} />
                         <X link={true} />
+                        <Github link={true} />
                     </div>
                 </IndexBlock>
 
@@ -92,7 +94,6 @@ function Index() {
                         <Discord btn={true} />
                         <Instagram btn={true} />
                         <Threads btn={true} />
-                        <Medium btn={true} />
                         <X btn={true} />
                     </div>
                 </IndexBlock>

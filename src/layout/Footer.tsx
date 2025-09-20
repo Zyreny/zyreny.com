@@ -1,4 +1,4 @@
-import { Discord, Email, Instagram, Medium, Threads, X } from "@comp";
+import { Discord, Email, Github, Instagram, Medium, Threads, X } from "@comp";
 import styles from "./Footer.module.css";
 
 function Footer() {
@@ -14,6 +14,7 @@ function Footer() {
                 <Threads link={true} color="#fff" size={30} />
                 <Medium link={true} color="#fff" size={30} />
                 <X link={true} color="#fff" size={30} />
+                <Github link={true} color="#fff" size={30} />
             </div>
         </footer>
     );

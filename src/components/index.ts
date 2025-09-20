@@ -1,6 +1,6 @@
 /**
  * 自動生成的 index.ts 檔案
- * 生成時間(UTC+8): 2025/9/20 上午12:37:38
+ * 生成時間(UTC+8): 2025/9/20 下午2:57:49
  * 
  * 此檔案由 scripts/generate-index.js 自動生成
  * 請勿手動修改，執行 npm run generate-index 重新生成
@@ -10,6 +10,7 @@ export { default as AutoOrder } from './home/AutoOrder';
 export { default as Discord } from './icon/Discord';
 export { default as Email } from './icon/Email';
 export { default as Error } from './status/Error';
+export { default as Github } from './icon/Github';
 export { default as HomeButton } from './common/HomeButton';
 export { default as IndexBlock } from './home/IndexBlock';
 export { default as Instagram } from './icon/Instagram';

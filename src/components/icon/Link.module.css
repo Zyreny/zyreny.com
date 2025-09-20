@@ -4,6 +4,7 @@
     display: flex;
     transition: 0.3s;
 }
+
 .link:hover {
     transform: scale(1.1);
 }
@@ -14,17 +15,19 @@
     font-size: 1.3rem;
     color: #1f68b2;
     text-decoration: none;
-    transition: 0.3s ease;
+    transition: 0.2s;
     user-select: none;
     font-family: var(--font-huninn);
     display: flex;
     align-items: center;
     gap: 1rem;
 }
+
 .btn svg {
     width: 1.5rem;
     height: 1.5rem;
 }
+
 .btn:hover {
     background-color: var(--btn-hover);
     transform: scale(1.03);

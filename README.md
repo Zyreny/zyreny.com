@@ -29,7 +29,7 @@
 - **ESLint** - 程式碼品質保證
 - **熱重載** - 開發時即時更新
 
-## �️ 技術棧
+## 🚀 技術棧
 
 | 分類 | 技術 | 版本 | 用途 |
 |------|------|------|------|
@@ -41,46 +41,6 @@
 | **樣式** | CSS Modules | - | 樣式隔離 |
 | **程式碼品質** | ESLint | 9.33.0 | 程式碼檢查 |
 
-## 🏗️ 專案架構
-
-```
-zyreny.com/
-├── 📁 public/                    # 靜態資源
-│   ├── 🖼️ img/                  # 圖片資源
-│   │   ├── logo/               # Logo 相關
-│   │   ├── nav/                # 導航圖標
-│   │   └── contact/            # 聯絡圖標
-│   ├── 🎨 apple-touch-icon.png # PWA 圖標
-│   └── 📄 site.webmanifest     # PWA 配置
-├── 📁 src/
-│   ├── 🔌 api/                  # API 介面層
-│   │   ├── index.ts            # API 統一匯出
-│   │   ├── news.ts             # 新聞 API
-│   │   └── projects.ts         # 專案 API
-│   ├── 🎨 assets/               # 資源檔案
-│   │   ├── css/                # 全域樣式
-│   │   └── img/                # 圖片資源
-│   ├── 🧩 components/           # 可重用組件
-│   │   ├── SEO.tsx             # SEO 組件
-│   │   ├── Project.tsx         # 專案卡片
-│   │   ├── ProjectsList.tsx    # 專案列表
-│   │   └── common/             # 通用組件
-│   ├── 🏗️ layout/               # 佈局組件
-│   │   ├── Nav.tsx             # 導航列
-│   │   └── Footer.tsx          # 頁尾
-│   ├── 📄 pages/                # 頁面組件
-│   │   ├── index.tsx           # 首頁
-│   │   ├── projects.tsx        # 專案頁
-│   │   ├── 404.tsx             # 錯誤頁面
-│   │   └── routes.tsx          # 路由配置
-│   ├── 🚀 App.tsx               # 主應用組件
-│   └── 🎯 main.tsx              # 應用入口點
-├── 📋 package.json              # 專案配置
-├── ⚙️ vite.config.ts           # Vite 配置
-├── 📝 tsconfig.json            # TypeScript 配置
-└── 🔍 eslint.config.js         # ESLint 配置
-```
-
 ## 🚀 快速開始
 
 ### 📋 環境需求
@@ -90,7 +50,7 @@ zyreny.com/
 
 ### 📥 安裝與運行
 
-1. **克隆專案**
+1. **Clone 專案**
    ```bash
    git clone https://github.com/Zyreny/zyreny.com.git
    cd zyreny.com/rebuild/zyreny.com
@@ -219,6 +179,12 @@ npm run lint
 
 [![GitHub](https://img.shields.io/badge/GitHub-Zyreny-181717?style=flat-square&logo=github)](https://github.com/Zyreny)
 [![Website](https://img.shields.io/badge/Website-zyreny.com-2885e2?style=flat-square&logo=firefox)](https://zyreny.com)
+[![Email](https://img.shields.io/badge/Email-hi@zyreny.com-181717?style=flat-square&logo=gmail)](mailto:hi@zyreny.com)
+[![Discord](https://img.shields.io/badge/Discord-Zyreny_Studio-5865F2?style=flat-square&logo=discord)](https://discord.gg/XdedtvmPZ6)
+[![Instagram](https://img.shields.io/badge/Instagram-zyrenyy-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/zyrenyy)
+[![Threads](https://img.shields.io/badge/Threads-@zyrenyy-000000?style=flat-square&logo=threads)](https://www.threads.net/@zyrenyy)
+[![Medium](https://img.shields.io/badge/Medium-Zyreny-000000?style=flat-square&logo=medium)](https://zyreny.medium.com/)
+[![X](https://img.shields.io/badge/X-@zyrenyy-1DA1F2?style=flat-square&logo=x)](https://x.com/zyrenyy)
 
 ---
 

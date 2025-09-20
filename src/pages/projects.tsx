@@ -2,7 +2,8 @@ import SEO from "../components/common/SEO";
 import { IndexBlock, ProjectsList, HomeButton } from "@comp";
 
 const navBtns = [
-    { id: "home", name: "首頁", path: "/" }
+    { id: "home", name: "首頁", path: "/" }, 
+    { id: "about", name: "關於我", path: "/#About" },
 ];
 
 function Projects() {

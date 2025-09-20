@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./ZyrulsManage.module.css";
 import listUrls from "@api/zyruls/list";
-import { Loading, ZyrulsUrlItem, ZyrulsMsg } from "@comp";
+import { Loading, ZyrulsUrlItem, ZyrulsMsg, NoData } from "@comp";
 import type { UrlItem } from "@api/zyruls/list";
 
 function ZyrulsManage() {
@@ -62,18 +62,7 @@ function ZyrulsManage() {
             {loading || refreshing || deleting ? (
                 <Loading />
             ) : urls.length === 0 ? (
-                <div className={styles.empty}>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="96px"
-                        height="96px"
-                        viewBox="0 -960 960 960"
-                        fill="#94a3b8"
-                    >
-                        <path d="m770-302-60-62q40-11 65-42.5t25-73.5q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 57-29.5 105T770-302ZM634-440l-80-80h86v80h-6ZM792-56 56-792l56-56 736 736-56 56ZM440-280H280q-83 0-141.5-58.5T80-480q0-69 42-123t108-71l74 74h-24q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h65l79 80H320Z" />
-                    </svg>
-                    <p>你還沒有建立短網址</p>
-                </div>
+                <NoData msg="你還沒建立短網址" />
             ) : (
                 <div className={styles.list}>
                     {urls.map((url) => {

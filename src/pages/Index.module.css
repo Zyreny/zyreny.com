@@ -150,7 +150,7 @@
     }
 }
 
-@media screen and (max-width: 1010px) {
+@media screen and (max-width: 1050px) {
     .about h1 {
         align-items: center;
         margin-bottom: 5rem;
@@ -170,7 +170,7 @@
         height: calc(100vh - 60px);
     }
 }
-@media screen and (max-width: 635px) {
+@media screen and (max-width: 690px) {
     .br::after {
         content: "";
     }
