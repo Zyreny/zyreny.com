@@ -16,8 +16,8 @@ interface SEOProps {
 const defaultSEO = {
     title: "Zyreny",
     desc: "我是 Zyreny，一名喜歡寫程式的國中生，專注在網頁開發與實驗性專案，這個網站會放我一些有趣的作品集。",
-    img: "https://react.zyreny.com/og_img.png",
-    url: "https://react.zyreny.com",
+    img: "https://zyreny.com/og_img.png",
+    url: "https://zyreny.com",
     theme: "#2885e2",
     bodyBg: "#f5f5f5",
     textColor: "#174879",
