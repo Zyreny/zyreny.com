@@ -11,31 +11,98 @@ function ZyrulsCreate() {
         button.classList.toggle(styles["active"]);
     };
 
+    const isValidUrl = (str: string) => {
+        try {
+            const url = new URL(str);
+            return ["http:", "https:"].includes(url.protocol);
+        } catch (e) {
+            console.error(e);
+            return false;
+        }
+    };
+
+    const errMsg = (msg: string) => {
+        setLoading(false);
+        setSuccess(false);
+        setMsg(msg);
+    };
+
     const [success, setSuccess] = useState<boolean | null>(null);
     const [msg, setMsg] = useState<string>("");
-    const [data, setData] = useState<UrlData>({} as UrlData);
+    const [response, setResponse] = useState<UrlData>({} as UrlData);
     const [loading, setLoading] = useState<boolean>(false);
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
         setLoading(true);
-        const data = await createUrl(e);
+
+        const formData = new FormData(e.target as HTMLFormElement);
+        const data = Object.fromEntries(formData.entries());
+
+        const customCode = data.customCode as string | null;
+        const password = data.password as string | null;
+        const metaTitle = data.metaTitle as string | null;
+        const metaDesc = data.metaDesc as string | null;
+        const metaImage = data.metaImage as string | null;
+
+        if (!data.url || !isValidUrl(data.url as string)) {
+            errMsg("請輸入有效的原始網址");
+            return;
+        }
+        if (
+            customCode &&
+            (!/^[a-zA-Z0-9-_]+$/.test(customCode) ||
+                customCode.length < 3 ||
+                customCode.length > 20)
+        ) {
+            errMsg(
+                "自訂代碼必須是 3-20 個字符，且只能包含英文字母、數字、連字符和底線"
+            );
+            return;
+        }
+        const twTime = new Date(new Date().getTime() + 8 * 60 * 60 * 1000);
+        if (data.exp && new Date(data.exp as string) <= twTime) {
+            errMsg("請輸入有效的過期時間");
+            return;
+        }
+        if (password && password.length > 100) {
+            errMsg("密碼長度不能超過 100 個字符");
+            return;
+        }
+        if (metaTitle && metaTitle.length > 100) {
+            errMsg("標題長度不能超過 100 個字符");
+            return;
+        }
+        if (metaDesc && metaDesc.length > 300) {
+            errMsg("描述長度不能超過 300 個字符");
+            return;
+        }
+        if (metaImage && !isValidUrl(metaImage)) {
+            errMsg("請輸入有效的縮圖網址");
+            return;
+        }
+
+        const res = await createUrl(data as Record<string, string | null>);
         setLoading(false);
 
-        if (data.success && data.data) {
+        if (res.success && res.data) {
             (e.target as HTMLFormElement).reset();
-            setData(data.data);
+            setResponse(res.data);
+            const local = JSON.parse(localStorage.getItem("urlsData") || "[]");
+            localStorage.setItem(
+                "urlsData",
+                JSON.stringify(local.unshift(res.data))
+            );
             setSuccess(true);
-            setMsg(data.message || "短網址建立成功！");
+            setMsg(res.message || "短網址建立成功！");
         } else {
             setSuccess(false);
-            setMsg(data.message || "短網址建立失敗，請稍後再試。");
+            setMsg(res.message || "短網址建立失敗，請稍後再試。");
         }
     };
 
     const [copyMsg, setCopyMsg] = useState<boolean>(false);
     const handleCopy = () => {
-        navigator.clipboard.writeText(data?.shortUrl || "");
+        navigator.clipboard.writeText(response?.shortUrl || "");
         setCopyMsg(true);
     };
 
@@ -148,14 +215,14 @@ function ZyrulsCreate() {
                 </button>
             </form>
 
-            {data?.shortUrl && (
+            {response?.shortUrl && (
                 <div className={styles.result}>
                     <h3>短網址已建立！</h3>
                     <div className={styles["result-row"]}>
                         <input
                             type="text"
                             id="resultUrl"
-                            value={data?.shortUrl}
+                            value={response?.shortUrl}
                             readOnly
                         />
                         <button
@@ -179,7 +246,7 @@ function ZyrulsCreate() {
                         <ZyrulsCopyMsg onClose={() => setCopyMsg(false)} />
                     )}
                     <p className={styles.note}>
-                        建立時間：{formatDate(data?.createdAt)}（台灣時間）
+                        建立時間：{formatDate(response?.createdAt)}（台灣時間）
                     </p>
                 </div>
             )}

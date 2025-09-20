@@ -58,7 +58,6 @@ function ZyrulsInput({
                     id={id}
                     name={id}
                     placeholder={placeholder}
-                    required={required}
                 />
             ) : (
                 <input
@@ -66,7 +65,6 @@ function ZyrulsInput({
                     id={id}
                     name={id}
                     placeholder={placeholder}
-                    required={required}
                 />
             )}
             {note && <p>{note}</p>}

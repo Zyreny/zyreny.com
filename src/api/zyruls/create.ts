@@ -1,17 +1,17 @@
 const apiUrl = `${import.meta.env.VITE_API_URL}/zyruls/create`;
 
 export interface UrlData {
-    shortUrl: string,
-    code: string,
-    originalUrl: string,
-    createdAt: string,
-    hasPassword: boolean,
-    exp: string | null,
+    shortUrl: string;
+    code: string;
+    originalUrl: string;
+    createdAt: string;
+    hasPassword: boolean;
+    exp: string | null;
     meta: {
-        title: string | null,
-        description: string | null,
-        image: string | null
-    }
+        title: string | null;
+        description: string | null;
+        image: string | null;
+    };
 }
 
 interface CreateUrlResponse {
@@ -20,10 +20,9 @@ interface CreateUrlResponse {
     data?: UrlData;
 }
 
-export default async function createUrl(e: React.FormEvent): Promise<CreateUrlResponse> {
-    const formData = new FormData(e.target as HTMLFormElement);
-    const data = Object.fromEntries(formData.entries());
-
+export default async function createUrl(
+    data: Record<string, string | null>
+): Promise<CreateUrlResponse> {
     const postData = {
         url: data.url,
         custom: data.customCode || null,
@@ -33,8 +32,8 @@ export default async function createUrl(e: React.FormEvent): Promise<CreateUrlRe
             title: data.metaTitle || null,
             description: data.metaDesc || null,
             image: data.metaImage || null,
-        }
-    }
+        },
+    };
 
     const res = await fetch(apiUrl, {
         method: "POST",
