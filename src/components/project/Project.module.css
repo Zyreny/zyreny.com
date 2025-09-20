@@ -1,0 +1,41 @@
+.proj {
+    width: 45%;
+    height: 100%;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+    transition: .3s ease;
+    color: var(--text-color);
+    text-decoration: none;
+}
+.proj:hover {
+    background-color: var(--btn-hover);
+}
+.proj img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+.proj h2, .proj p {
+    position: relative;
+    left: 1%;
+}
+.proj h2 {
+    margin-bottom: 0.4rem;
+}
+.proj i {
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    margin: 0 0.2rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .proj {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .proj {
+        padding: 1.8rem 1.5rem;
+    }
+}

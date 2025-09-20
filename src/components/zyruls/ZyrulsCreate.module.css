@@ -1,0 +1,142 @@
+.form-row {
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.section button {
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-family: var(--font-huninn);
+    color: var(--title-color);
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 0.8rem;
+}
+
+.section button:hover {
+    background-color: var(--bg-color);
+}
+
+.section button .icon-svg {
+    transition: transform 0.3s ease;
+}
+
+.section button.active .icon-svg {
+    transform: rotate(180deg);
+}
+
+.section-content {
+    max-height: 0;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 1rem;
+    transition: max-height 0.3s ease;
+}
+
+.section-content.active {
+    padding: 1rem;
+    opacity: 1;
+    max-height: 480px;
+}
+
+.note {
+    opacity: 0.7;
+    font-size: 0.8rem;
+    margin: 0.3rem 0 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--theme-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: var(--font-huninn);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--btn-color);
+}
+
+.submit-btn:disabled {
+    cursor: not-allowed;
+    background-color: #1f68b2b3;
+}
+
+.result {
+    background-color: #2885e20d;
+    border: 1px solid #2885e233;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+}
+
+.result h3 {
+    color: var(--title-color);
+}
+
+.result-row {
+    width: 100%;
+    display: flex;
+    margin: 1rem 0;
+    min-height: 50px;
+}
+
+.result-row input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    color: var(--theme-color);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid var(--theme-color);
+    outline: none;
+}
+
+.result .copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1.5rem;
+    background-color: var(--theme-color);
+    color: #fff;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    font-size: 1rem;
+    font-family: var(--font-huninn);
+    transform: translateX(-1px);
+    cursor: pointer;
+}
+
+.copied {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}

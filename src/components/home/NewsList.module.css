@@ -1,0 +1,29 @@
+.list {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+.btn {
+    background-color: transparent;
+    color: var(--btn-color);
+    border: none;
+    border-radius: 50px;
+    padding: 0.5em 1.2em;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: var(--font-huninn);
+    transition: 0.3s ease;
+}
+.btn:hover {
+    background-color: var(--btn-hover);
+}

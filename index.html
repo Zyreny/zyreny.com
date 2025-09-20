@@ -1,142 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zyreny</title>
-    <meta name="description" content="我是Zyreny，一個喜歡程式設計的國中生，這裡有一些奇怪有趣的網頁專案作品。">
-    <meta name="keywords" content="Zyreny, 程式設計, 前端開發, 網頁設計, Vue.js, C++, 平面設計, 攝影, 臺中, 國中生, 作品集">
-    <meta name="author" content="Zyreny">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="zh-TW">
-    <link rel="preconnect" href="https://zyreny.com/">
-    <link rel="stylesheet" href="/assets/css/min/home.min.css">
-    <link rel="preload" href="/assets/css/min/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/min/style.min.css"></noscript>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Huninn&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet" />
 
-    <link rel="icon" href="/assets/favicon/favicon.ico" sizes="32x32">
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon/icon.svg" />
-    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zyreny.com/">
-    <meta property="og:title" content="Zyreny">
-    <meta property="og:description" content="我是Zyreny，一個喜歡程式設計的國中生，這裡有一些奇怪有趣的網頁專案作品。">
-    <meta property="og:image" content="https://zyreny.com/assets/img/logo/og_img.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Zyreny">
-    <meta property="og:site_name" content="Zyreny">
-    <meta property="og:locale" content="zh_TW">
-    
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://zyreny.com/">
-    <meta property="twitter:title" content="Zyreny">
-    <meta property="twitter:description" content="我是Zyreny，一個喜歡程式設計的國中生，這裡有一些奇怪有趣的網頁專案作品。">
-    <meta property="twitter:image" content="https://zyreny.com/assets/img/logo/og_img.png">
-    <meta property="twitter:image:width" content="1200">
-    <meta property="twitter:image:height" content="630">
-    <meta property="twitter:image:type" content="image/png">
-
-    <meta name="theme-color" content="#2885e2">
-    <meta name="msapplication-TileColor" content="#2885e2">
-    <meta name="application-name" content="Zyreny">
-    <link rel="canonical" href="https://zyreny.com/">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "website",
-        "name": "Zyreny",
-        "alternateName": "Zyreny",
-        "url": "https://zyreny.com",
-        "image": "https://zyreny.com/assets/img/logo/Zyreny_full.svg",
-        "description": "我是Zyreny，一個喜歡程式設計的國中生，這裡有一些奇怪有趣的網頁專案作品。",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "臺中",
-            "addressCountry": "TW"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "hi@zyreny.com",
-            "contactType": "customer service"
-        }
-    }
-    </script>
-</head>
-<body>
-    <div nav></div>
-
-    <main>
-        <div class="top">
-            <div class="top-overlay"></div>
-            <h1>Zyreny</h1>
-            <h2>創造、探索、突破</h2>
-        </div>
-
-        <div class="about" id="About">
-            <h1 class="title">關於我</h1>
-            <div>
-                <img src="/assets/img/home/Nyan.gif" alt="Zyreny" class="nyan">
-                <p>嗨，我是 <b>Zyreny</b>，一個來自臺中的普通國中生。<span class="br"></span>
-                    喜歡 <b>寫程式、平面設計、攝影、哲學、社會心理學</b>，<span class="br"></span>
-                    現在專注在 <b>網頁前端開發</b>、設計風格是極簡風、<span class="br"></span>
-                    正在學習 <b>C++, Vue.js</b>
-                </p>
-            </div>
-        </div>
-
-        <div class="projects" id="Projects">
-            <h1 class="title">作品集</h1>
-            <p class="desc">這裡會放我最新的四個作品，各有特色。</p>
-            <div class="projs-list"></div>
-            <a href="/projects/" class="view-all">看全部<img src="/assets/img/home/arrow.svg" alt=">"></a>
-        </div>
-
-        <div class="store" id="Store">
-            <h1 class="title">商店</h1>
-            <p class="desc">讓我賺點外快吧，現在的服務有以下這幾個：<span class="br"></span>商店功能還在開發，如果要下單請到<a href="https://discord.gg/6yNPNpRVWs">Discord</a>了解</p>
-
-            <div class="products-list">
-                <div class="product">
-                    <img src="/assets/img/home/web.svg" alt="網頁開發、網站架設" class="product-img">
-                    <h2>網頁開發、網站架設</h2>
-                    <p>如果你需要一個網站，無論是個人網站、商業網站或是其他網站，我都可以幫你做。</p>
-                </div>
-                <div class="product">
-                    <img src="/assets/img/home/design.svg" alt="平面設計" class="product-img">
-                    <h2>平面設計</h2>
-                    <p>如果你需要平面設計，海報、名片等等，我都可以幫你設計。</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="news" id="News">
-            <h1 class="title">新聞</h1>
-            <p class="desc">這裡會放關於我或這個網站的最新消息。</p>
-            <div class="news-list"></div>
-            <div class="news-pagination"></div>
-        </div>
-
-        <div class="contact" id="Contact">
-            <h1 class="title">聯絡我</h1>
-            <p class="desc">如果你對於我有任何問題、建議或想和我聊天，可以用底下這些方式找我：</p>
-            <div class="contact-list">
-                <button><a href="mailto:hi@zyreny.com"><img src="/assets/img/contact/email.svg" alt="Email圖標">Email</a></button>
-                <button><a href="https://www.instagram.com/zyrenyy/" target="_blank"><img src="/assets/img/contact/instagram.svg" alt="Instagram圖標">Instagram</a></button>
-                <button><a href="https://discord.gg/XdedtvmPZ6" target="_blank"><img src="/assets/img/contact/discord.svg" alt="Discord圖標">Discord</a></button>
-            </div>
-
-            <p class="desc return">如果你在這個網站裡面遇到任何問題，可以傳電子郵件到<a href="mailto:support@zyreny.com">這裡</a>回報。</p>
-        </div>
-    </main>
-
-    <footer></footer>
-
-    <script src="/assets/js/min/main.min.js" defer></script>
-    <script src="/assets/js/min/home.min.js" defer></script>
-</body>
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>

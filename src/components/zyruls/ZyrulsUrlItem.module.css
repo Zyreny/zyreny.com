@@ -1,0 +1,85 @@
+.item {
+    padding: 1.5rem;
+    border: 1px solid var(--bg-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+    gap: 3rem;
+    transition: 0.3s ease;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.url {
+    display: flex;
+    gap: 4rem;
+}
+
+.url div {
+    flex: 1;
+    display: flex;
+}
+
+.url input {
+    width: 100%;
+    flex: 1;
+    padding: 1rem 1.5rem;
+    color: var(--theme-color);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid var(--theme-color);
+    outline: none;
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1.5rem;
+    background-color: var(--theme-color);
+    color: #fff;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    font-size: 1rem;
+    font-family: var(--font-huninn);
+    transform: translateX(-1px);
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #ef4444;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+}
+
+.original-url {
+    word-break: break-all;
+    margin-top: 0.7rem;
+}
+
+.date {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.item:hover {
+    box-shadow: 0 4px 20px #0000001a;
+    transform: translateY(-1px);
+}
+
+@media screen and (max-width: 700px) {
+    .url {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+}

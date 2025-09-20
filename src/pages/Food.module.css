@@ -1,0 +1,50 @@
+.container, .quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    padding: 4rem 0;
+}
+
+.quiz {
+    width: 100%;
+    text-align: center;
+    margin: 6rem 0 8rem;
+    gap: 4rem;
+}
+.q-title {
+    color: var(--title-color);
+    font-size: 1.9rem;
+}
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+}
+.question label {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.question input {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+    accent-color: var(--text-color);
+    transform: translateY(3px);
+    position: relative;
+    z-index: -1;
+}
+.submit {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+.quiz hr {
+    width: 90%;
+    max-width: 500px;
+    border: 2px solid;
+    border-radius: 20px;
+}

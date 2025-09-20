@@ -1,0 +1,45 @@
+.card {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #00000033;
+    transition: transform 0.3s;
+    cursor: default;
+}
+.card:hover {
+    transform: scale(1.007);
+}
+.title {
+    font-size: 1.3rem;
+    color: var(--title-color);
+    margin-bottom: 1rem;
+}
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-huninn);
+    margin-bottom: 1.2rem;
+}
+.category {
+    color: #fff;
+    box-shadow: 0 1px 5px #0001;
+    padding: 0.5rem 0.6rem;
+    border-radius: 10px;
+}
+.date {
+    font-size: 1.1rem;
+    color: #447fba;
+}
+.card p {
+    font-size: 1.1rem;
+}
+
+.web-update { /* 網站更新 */
+    background-color: var(--theme-color);
+}
+.new-proj { /* 新作品 */
+    background-color: #11a6c7;
+}
