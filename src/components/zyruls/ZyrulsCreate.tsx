@@ -88,9 +88,18 @@ function ZyrulsCreate() {
             (e.target as HTMLFormElement).reset();
             setResponse(res.data);
             const local = JSON.parse(localStorage.getItem("urlsData") || "[]");
+            const urlItem = {
+                code: res.data.code,
+                url: res.data.originalUrl,
+                createdAt: res.data.createdAt,
+                hasPassword: res.data.hasPassword,
+                exp: res.data.exp,
+                meta: res.data.meta,
+            };
+            local.unshift(urlItem);
             localStorage.setItem(
                 "urlsData",
-                JSON.stringify(local.unshift(res.data))
+                JSON.stringify(local)
             );
             setSuccess(true);
             setMsg(res.message || "短網址建立成功！");
