@@ -1,7 +1,6 @@
 import styles from "./Index.module.css";
 
 import nyan from "@assets/img/home/nyan.gif";
-import arrow from "@assets/img/home/arrow.svg";
 
 import {
     SEO,
@@ -16,6 +15,7 @@ import {
     X,
     Medium,
     Github,
+    BackToTop,
 } from "@comp";
 
 const navBtns = [
@@ -23,6 +23,7 @@ const navBtns = [
     { id: "about", name: "關於", path: "#About" },
     { id: "projects", name: "作品", path: "#Projects" },
     { id: "news", name: "新聞", path: "#News" },
+    { id: "docs", name: "文檔", path: "#Docs" },
     { id: "contact", name: "聯絡", path: "#Contact" },
 ];
 
@@ -44,7 +45,8 @@ function Index() {
                         <p>
                             嗨，我是 <b>Zyreny</b>，一個來自臺中的國中生。
                             <span className={styles.br}></span>
-                            喜歡 <b>程式開發、平面設計、攝影、UI/UX、深度報導</b>，
+                            喜歡{" "}
+                            <b>程式開發、平面設計、攝影、UI/UX、深度報導</b>，
                             <span className={styles.br}></span>
                             現在專注在 <b>網頁前端開發</b>、設計喜歡極簡風、
                             <span className={styles.br}></span>
@@ -73,7 +75,15 @@ function Index() {
 
                     <a href="/projects" className={styles["view-all"]}>
                         看全部
-                        <img src={arrow} alt=">" />
+                        <svg
+                            fill="#1f68b2"
+                            viewBox="0 0 512 512"
+                            height="24px"
+                            width="24px"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
+                        </svg>
                     </a>
                 </IndexBlock>
 
@@ -84,6 +94,26 @@ function Index() {
                 >
                     <NewsList />
                 </IndexBlock>
+
+                <IndexBlock
+                    title="文檔"
+                    desc="這裡有我寫的各種文檔，包含 API 文件、教學、指南等等。"
+                    id="Docs"
+                >
+                    <a href="/docs" className={styles["view-all"]}>
+                        文檔中心
+                        <svg
+                            fill="#1f68b2"
+                            viewBox="0 0 512 512"
+                            height="24px"
+                            width="24px"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path>
+                        </svg>
+                    </a>
+                </IndexBlock>
+
                 <IndexBlock
                     title="聯絡"
                     desc="如果你對於我有任何問題、建議或想和我聊天，可以用底下這些方式找我："
@@ -98,10 +128,11 @@ function Index() {
                     </div>
                 </IndexBlock>
             </AutoOrder>
+
+            <BackToTop threshold={1500} />
         </>
     );
 }
 
 Index.navBtns = navBtns;
-
 export default Index;

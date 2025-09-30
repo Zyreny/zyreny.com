@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -37,25 +41,53 @@ main {
 
 .title {
     color: var(--title-color);
-    margin-bottom: 3rem;
+    margin: 0 0.3rem 2rem;
     font-size: 2.8rem;
     text-align: center;
     font-weight: bold;
 }
+
 .desc {
     color: var(--text-color);
     font-size: 1.21em;
     text-align: center;
-    margin-bottom: 4rem;
+    margin: 0 0.3rem 4rem 0;
     line-height: 1.8rem;
 }
 
+.link {
+    color: var(--btn-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: var(--font-huninn);
+    display: inline-block;
+}
+
+.link::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: var(--btn-color);
+    border-radius: 20px;
+    margin-top: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.link:hover::after {
+    transform: scaleX(1.05);
+}
+
 .btn {
+    width: fit-content;
     background-color: transparent;
     cursor: pointer;
     border: none;
     border-radius: 50px;
     padding: 0.6em 1.2em;
+    margin: 0 1rem;
     font-size: 1.4rem;
     color: var(--btn-color);
     text-decoration: none;
@@ -63,9 +95,9 @@ main {
     user-select: none;
     font-family: var(--font-huninn);
     display: flex;
-    align-items: center;
     gap: 0.6rem;
 }
+
 .btn:hover {
     background-color: var(--btn-hover);
 }
@@ -86,8 +118,35 @@ main {
     align-items: center;
     gap: 0.6rem;
 }
+
 .btn-outline:hover {
     background-color: var(--btn-hover);
+}
+
+.input, .textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--theme-color);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: var(--font-huninn);
+    color: var(--text-color);
+    transition: box-shadow 0.3s;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 85px;
+}
+
+.input::placeholder, .textarea::placeholder {
+    color: var(--title-color);
+    opacity: 0.6;
+}
+
+.input:focus, .textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--btn-hover);
 }
 
 @media screen and (max-width: 768px) {

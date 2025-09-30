@@ -13,7 +13,7 @@ type PageComponent = React.ComponentType & {
 
 function generateRoutes() {
     const modules: Record<string, { default: PageComponent }> =
-        import.meta.glob("./*.tsx", { eager: true });
+        import.meta.glob("./**/*.tsx", { eager: true });
     const pageNavBtns: Record<string, NavBtn[]> = {};
     const childRoutes: RouteObject[] = [];
 
@@ -24,11 +24,21 @@ function generateRoutes() {
         // 從文件路徑提取路由路徑
         let routePath = path.replace("./", "").replace(/\.tsx$/, "");
 
+        // 排除 routes.tsx 文件
+        if (routePath === "routes") {
+            continue;
+        }
+
+        routePath = routePath.replace(/\[\.\.\.([^\]]+)\]/g, "*");
+        routePath = routePath.replace(/\[([^\]]+)\]/g, ":$1");
+
         // 處理 index 路由
         if (routePath === "index") {
             routePath = "/";
         } else if (routePath === "404") {
             routePath = "*";
+        } else if (routePath.endsWith("/index")) {
+            routePath = `/${routePath.replace("/index", "")}`;
         } else {
             routePath = `/${routePath}`;
         }

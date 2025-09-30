@@ -1,0 +1,241 @@
+.container {
+    padding: 5rem 0;
+}
+
+.md {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem;
+    color: #333;
+}
+
+.md h1,
+.md h2,
+.md h3,
+.md h4,
+.md h5,
+.md h6 {
+    color: #174879;
+    margin: 1.5rem 0 0.5rem;
+    font-weight: 600;
+    scroll-margin-top: 6.5rem;
+}
+
+.md h1 {
+    color: var(--title-color);
+    font-size: 2.5rem;
+    border-bottom: 3px solid var(--title-color);
+    padding-bottom: 0.5rem;
+    margin: 2rem 0 1rem;
+}
+
+.md h2 {
+    color: var(--title-color);
+    font-size: 1.8rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.3rem;
+    margin: 4rem 0 1.5rem;
+}
+
+.md h3 {
+    font-size: 1.3rem;
+    margin: 2rem 0 0.5rem;
+}
+
+.md p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.md p a {
+    line-height: normal;
+    margin: 0 0.1rem;
+}
+
+.md ul,
+.md ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.md li a {
+    line-height: normal;
+    font-size: 1.1rem;
+}
+
+.md li h3 {
+    margin: 0.8rem 0;
+}
+
+.md li h3 a {
+    font-size: 1.5rem;
+    line-height: normal;
+}
+
+.md li::marker {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.md li:has(input[type="checkbox"]) {
+    list-style: none;
+    margin-left: -1.5rem;
+}
+
+.md li input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.md .code {
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.md pre {
+    background: #282c34;
+    border-radius: 0 0 10px 10px;
+    padding: 0.9rem 1.3rem;
+    font-family: var(--font-mono);
+    width: 100%;
+    display: grid;
+}
+
+.md .language {
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #282c34;
+    border-bottom: 1px solid #464d5b;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 10px 10px 0 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.md .copy {
+    display: flex;
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.md .copy:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.md .copied {
+    background: rgba(74, 222, 128, 0.2);
+}
+
+.md .copied:hover {
+    background: rgba(74, 222, 128, 0.3);
+}
+
+.md code {
+    background: #f8f9fa;
+    border: 1px solid #dfe1e2;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.md pre code {
+    border: none;
+    background: none;
+    padding: 0;
+    overflow-x: auto;
+    color: #abb2bf;
+}
+
+.md blockquote {
+    margin: 1rem 0;
+    font-style: italic;
+    position: relative;
+    padding-left: 1rem;
+    color: #375471;
+}
+
+.md blockquote::before {
+    content: "";
+    height: 100%;
+    width: 4px;
+    background: #5f9ddc;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.md table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.md th,
+.md td {
+    padding: 0.6rem 1rem;
+    text-align: left;
+}
+
+.md table tbody tr {
+    transition: .15s;
+}
+
+.md table tbody tr:nth-child(odd) {
+    background: #fff;
+}
+
+.md table tbody tr:nth-child(even) {
+    background: #f6fbff;
+    color: var(--text-color);
+}
+
+.md tbody th:not(:last-child),
+.md tbody td:not(:last-child) {
+    border-right: 2px solid #d4eaff;
+}
+
+.md th {
+    background: var(--theme-color);
+    font-weight: 600;
+    color: #fff;
+}
+
+.md img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .md {
+        padding: 2rem;
+    }
+
+    .md h1 {
+        font-size: 2rem;
+    }
+
+    .md h2 {
+        font-size: 1.7rem;
+    }
+
+    .md pre {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+}
