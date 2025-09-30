@@ -112,6 +112,7 @@ function DocPage() {
                     }}
                 />
             </div>
+            
             <BackToHome />
             <BackToTop />
         </div>
