@@ -3,6 +3,17 @@ import styles from "./NewsCard.module.css";
 function NewsCard({ title, content, category, categoryZH, date }: { [key: string]: string }) {
     const formattedDate = date.replace(/-/g, "/").split(" ")[0];
 
+    const renderContent = () => {
+        const parts = content.split(/(\*\*.*?\*\*)/g);
+        return parts.map((part, index) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+                const text = part.replace(/\*\*/g, '');
+                return <i key={index}>{text}</i>;
+            }
+            return part;
+        });
+    }
+
     return (
         <div className={styles.card}>
             <h2 className={styles.title}>{title}</h2>
@@ -12,7 +23,7 @@ function NewsCard({ title, content, category, categoryZH, date }: { [key: string
                 </span>
                 <span className={styles.date}>{formattedDate}</span>
             </div>
-            <p>{content}</p>
+            <p>{renderContent()}</p>
         </div>
     );
 }

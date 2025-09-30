@@ -8,7 +8,14 @@ import rehypeSlug from "rehype-slug";
 import rehypeHighlight from "rehype-highlight";
 import "@assets/docs/atom-one-dark.min.css";
 
-import { SEO, DocsCodeBlock, DocsBreadcrumbs, BackToTop, BackToHome } from "@comp";
+import {
+    SEO,
+    DocsCodeBlock,
+    DocsBreadcrumbs,
+    BackToTop,
+    BackToHome,
+    Loading,
+} from "@comp";
 import NotFound from "@pages/404";
 
 interface DocMeta {
@@ -22,7 +29,7 @@ const navBtns = [
     { id: "projects", name: "作品", path: "/projects" },
     { id: "about", name: "關於", path: "/#About" },
     { id: "docs", name: "文檔", path: "/docs" },
-]
+];
 
 function DocPage() {
     const match = useMatch("/docs/*");
@@ -32,6 +39,7 @@ function DocPage() {
     const [content, setContent] = useState<string>("");
     const [meta, setMeta] = useState<DocMeta>({} as DocMeta);
     const [notFound, setNotFound] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(true);
     useEffect(() => {
         const fetchDoc = async () => {
             let res = await fetch(`/docs/${slug}.md`);
@@ -47,6 +55,7 @@ function DocPage() {
             const { attributes, body } = fm(text);
             setMeta(attributes as DocMeta);
             setContent(body);
+            setLoading(false);
         };
         fetchDoc();
     }, [slug]);
@@ -62,57 +71,72 @@ function DocPage() {
             <SEO title={`${meta.title} - 文檔`} desc={meta.description} />
             <DocsBreadcrumbs />
             <div className={styles.md}>
-                <p>
-                    上次編輯：
-                    {!lastEdited || !(lastEdited === "Invalid Date")
-                        ? lastEdited
-                        : new Date().toDateString()}
-                </p>
-                <ReactMarkdown
-                    children={content}
-                    remarkPlugins={[remarkGfm]}
-                    rehypePlugins={[rehypeHighlight, rehypeSlug]}
-                    components={{
-                        pre({ children, ...props }) {
-                            let language = "";
-                            React.Children.forEach(children, (child) => {
-                                if (
-                                    React.isValidElement(child) &&
-                                    child.type === "code"
-                                ) {
-                                    const childProps = child.props as {
-                                        className?: string;
-                                    };
-                                    const className =
-                                        childProps.className || "";
-                                    const match =
-                                        className.match(/language-(\w+)/);
-                                    if (match) {
-                                        language = match[1];
-                                    }
-                                }
-                            });
+                {loading ? (
+                    <Loading />
+                ) : (
+                    <>
+                        <p>
+                            上次編輯：
+                            {!lastEdited || !(lastEdited === "Invalid Date")
+                                ? lastEdited
+                                : new Date().toDateString()}
+                        </p>
+                        <ReactMarkdown
+                            children={content}
+                            remarkPlugins={[remarkGfm]}
+                            rehypePlugins={[rehypeHighlight, rehypeSlug]}
+                            components={{
+                                pre({ children, ...props }) {
+                                    let language = "";
+                                    React.Children.forEach(
+                                        children,
+                                        (child) => {
+                                            if (
+                                                React.isValidElement(child) &&
+                                                child.type === "code"
+                                            ) {
+                                                const childProps =
+                                                    child.props as {
+                                                        className?: string;
+                                                    };
+                                                const className =
+                                                    childProps.className || "";
+                                                const match =
+                                                    className.match(
+                                                        /language-(\w+)/
+                                                    );
+                                                if (match) {
+                                                    language = match[1];
+                                                }
+                                            }
+                                        }
+                                    );
 
-                            return (
-                                <DocsCodeBlock
-                                    language={language}
-                                    props={props}
-                                >
-                                    {children}
-                                </DocsCodeBlock>
-                            );
-                        },
-                        a({ children, ...props }) {
-                            return (
-                                <a {...props} className={`link ${styles.link}`}>
-                                    {children}
-                                </a>
-                            );
-                        },
-                    }}
-                />
+                                    return (
+                                        <DocsCodeBlock
+                                            language={language}
+                                            props={props}
+                                        >
+                                            {children}
+                                        </DocsCodeBlock>
+                                    );
+                                },
+                                a({ children, ...props }) {
+                                    return (
+                                        <a
+                                            {...props}
+                                            className={`link ${styles.link}`}
+                                        >
+                                            {children}
+                                        </a>
+                                    );
+                                },
+                            }}
+                        />
+                    </>
+                )}
             </div>
-            
+
             <BackToHome />
             <BackToTop />
         </div>

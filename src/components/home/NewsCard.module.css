@@ -43,6 +43,12 @@
     font-size: 1.1rem;
 }
 
+.card i {
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    margin: 0 0.2rem;
+}
+
 .web-update {
     /* 網站更新 */
     background-color: var(--theme-color);
