@@ -1,9 +1,9 @@
 import SEO from "../components/common/SEO";
-import { IndexBlock, ProjectsList, HomeButton } from "@comp";
+import { BackToHome, IndexBlock, ProjectsList } from "@comp";
 
 const navBtns = [
     { id: "home", name: "首頁", path: "/" }, 
-    { id: "about", name: "關於我", path: "/#About" },
+    { id: "about", name: "關於", path: "/#About" },
 ];
 
 function Projects() {
@@ -17,12 +17,11 @@ function Projects() {
 
             <IndexBlock title="作品集" desc="這裡有我所有的作品">
                 <ProjectsList endpoint="list" />
-                <HomeButton />
+                <BackToHome />
             </IndexBlock>
         </>
     );
 }
 
 Projects.navBtns = navBtns;
-
 export default Projects;

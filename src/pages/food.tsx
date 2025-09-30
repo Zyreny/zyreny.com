@@ -1,4 +1,4 @@
-import { HomeButton, Question, SEO } from "@comp";
+import { BackToHome, Question, SEO } from "@comp";
 import styles from "./Food.module.css";
 import { useEffect } from "react";
 
@@ -115,7 +115,7 @@ function Food() {
                         查看結果
                     </button>
                 </form>
-                <HomeButton />
+                <BackToHome />
             </div>
         </>
     );

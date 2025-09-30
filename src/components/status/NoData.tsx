@@ -1,6 +1,6 @@
 import styles from "./Status.module.css";
 
-function NoData({ msg, style }: { msg: string, style?: React.CSSProperties }) {
+function NoData({ msg = "沒有資料", style }: { msg?: string, style?: React.CSSProperties }) {
     return (
         <div className={styles.status} style={{ color: "#9ca3af", ...style }}>
             <svg

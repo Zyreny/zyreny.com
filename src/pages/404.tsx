@@ -1,23 +1,21 @@
-import { SEO, HomeButton } from "@comp";
+import { SEO, BackToHome } from "@comp";
 import { useState, useEffect, useMemo } from "react";
 
 import styles from "./404.module.css";
 
 function NotFound() {
-    const path = window.location.pathname;
+    const url = window.location.href;
     const [displayedLines, setDisplayedLines] = useState<string[]>([]);
     const [currentLineIndex, setCurrentLineIndex] = useState(0);
     const [currentCharIndex, setCurrentCharIndex] = useState(0);
 
-    const lines = useMemo(
-        () => [
-            `$ curl https://zyreny.com${path}`,
-            "錯誤代碼 404: 找不到頁面",
-            "$ echo 按下方按鈕返回首頁",
-            "按下方按鈕返回首頁",
-        ],
-        [path]
-    );
+    const lines = useMemo(() => [
+        `$ curl ${url}`,
+        "錯誤代碼 404: 找不到頁面",
+        "$ echo 按下方按鈕返回首頁",
+        "按下方按鈕返回首頁",
+    ],
+    [url]);
 
     const isCommandLine = (line: string | undefined) => line?.startsWith("$");
 
@@ -105,7 +103,7 @@ function NotFound() {
                         ))}
                     </div>
                 </div>
-                <HomeButton />
+                <BackToHome />
             </div>
         </>
     );

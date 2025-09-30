@@ -9,7 +9,7 @@ function Nav({
     return (
         <>
             <header className={styles.header}>
-                <a href="/" className={styles["logo-link"]}>
+                <a href="#" className={styles["logo-link"]}>
                     <img
                         src="/img/logo/logo_full.svg"
                         alt="Zyreny"

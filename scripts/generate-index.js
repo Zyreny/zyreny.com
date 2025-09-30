@@ -116,9 +116,9 @@ function generateExports(components) {
             component.name === getComponentName(fileNameWithoutExt);
 
         if (isDefaultExport) {
-            return `export { default as ${component.name} } from '${component.path}';`;
+            return `export { default as ${component.name} } from "${component.path}";`;
         } else {
-            return `export { ${component.name} } from '${component.path}';`;
+            return `export { ${component.name} } from "${component.path}";`;
         }
     });
 

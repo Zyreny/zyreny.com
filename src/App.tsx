@@ -18,7 +18,21 @@ function App() {
         <>
             <Nav
                 navBtns={
-                    pageNavBtns[currentPath] || [
+                    pageNavBtns[currentPath] ||
+                    (() => {
+                        for (const [routePath, navBtns] of Object.entries(
+                            pageNavBtns
+                        )) {
+                            const baseRoute = routePath.replace("/*", "");
+                            if (
+                                routePath.includes("*") &&
+                                currentPath.startsWith(baseRoute)
+                            ) {
+                                return navBtns;
+                            }
+                        }
+                        return null;
+                    })() || [
                         { id: "home", name: "首頁", path: "/" },
                         { id: "projects", name: "作品", path: "/projects" },
                         { id: "about", name: "關於", path: "/#About" },

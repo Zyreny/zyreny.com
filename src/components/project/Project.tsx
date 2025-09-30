@@ -20,10 +20,10 @@ function Project({ name, title, desc }: Record<string, string>) {
     }, [name]);
 
     const renderDesc = () => {
-        const parts = desc.split(/(<i>.*?<\/i>)/g);
+        const parts = desc.split(/(\*\*.*?\*\*)/g);
         return parts.map((part, index) => {
-            if (part.startsWith('<i>') && part.endsWith('</i>')) {
-                const text = part.replace(/<\/?i>/g, '');
+            if (part.startsWith('**') && part.endsWith('**')) {
+                const text = part.replace(/\*\*/g, '');
                 return <i key={index}>{text}</i>;
             }
             return part;

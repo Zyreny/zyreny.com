@@ -64,6 +64,7 @@ export default function SEO({
     return (
         <Head>
             <title>{title}</title>
+            <meta name="description" content={desc} />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={url} />
             <meta property="og:title" content={title} />

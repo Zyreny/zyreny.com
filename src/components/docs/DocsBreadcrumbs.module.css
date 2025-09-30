@@ -1,0 +1,8 @@
+.breadcrumbs {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    text-align: center;
+}

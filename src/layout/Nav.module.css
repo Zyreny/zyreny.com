@@ -2,9 +2,11 @@
     --nav-bg: #2885e2b8;
 }
 
-.header, .btm-nav {
+.header,
+.btm-nav {
     background-color: var(--nav-bg);
     box-shadow: 0 0 10px var(--nav-bg);
+    backdrop-filter: blur(5px);
 }
 
 .header {
@@ -16,26 +18,31 @@
     padding: 0 1.5rem;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 }
+
 .logo-link {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .logo {
     height: 45px;
     padding: 0 0.5rem;
 }
+
 .nav {
     height: 100%;
 }
+
 .nav ul {
     display: flex;
     list-style-type: none;
     height: 100%;
 }
+
 .nav-btn {
     height: 100%;
     font-size: 1.3rem;
@@ -43,6 +50,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .nav-btn a {
     height: 100%;
     display: flex;
@@ -51,7 +59,9 @@
     padding: 0 1rem;
     text-decoration: none;
 }
-.nav-btn:hover, .btm-nav-btn:hover {
+
+.nav-btn:hover,
+.btm-nav-btn:hover {
     background-color: #ffffff34;
 }
 
@@ -61,7 +71,9 @@
     height: 60px;
     position: fixed;
     bottom: 0;
+    z-index: 1;
 }
+
 .btm-nav ul {
     width: 100%;
     height: 100%;
@@ -69,10 +81,12 @@
     justify-content: space-around;
     list-style-type: none;
 }
+
 .btm-nav-btn {
     height: 100%;
     transition: background-color 0.3s;
 }
+
 .btm-nav-btn a {
     width: 100%;
     height: 100%;
@@ -87,6 +101,7 @@
     gap: 0.2rem;
     font-size: 0.9rem;
 }
+
 .btm-nav img {
     width: 1.5rem;
     height: 1.5rem;
@@ -110,16 +125,19 @@
         display: block;
     }
 }
+
 @media screen and (max-width: 450px) {
     .btm-nav-btn a {
         padding: 0.5rem 0.8rem;
     }
 }
+
 @media screen and (max-width: 350px) {
     .btm-nav-btn a {
         padding: 0.5rem 0.5rem;
         font-size: 0.8rem;
     }
+
     .btm-nav-btn img {
         width: 1.2rem;
         height: 1.2rem;
