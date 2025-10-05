@@ -12,6 +12,11 @@ function ProjectsList({ endpoint }: { endpoint: string }) {
     useEffect(() => {
         getProjects(endpoint)
             .then((data) => {
+                if (data.success === false) {
+                    setProjs(null);
+                    setLoading(false);
+                    return;
+                }
                 setProjs(data || []);
                 setLoading(false);
             })

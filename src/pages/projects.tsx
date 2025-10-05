@@ -16,7 +16,7 @@ function Projects() {
             />
 
             <IndexBlock title="作品集" desc="這裡有我所有的作品">
-                <ProjectsList endpoint="list" />
+                <ProjectsList endpoint="" />
                 <BackToHome />
             </IndexBlock>
         </>

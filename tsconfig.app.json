@@ -16,7 +16,6 @@
     "jsx": "react-jsx",
 
     /* 路徑別名x */
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
       "@comp": ["./src/components"],
