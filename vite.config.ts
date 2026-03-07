@@ -1,19 +1,47 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import { fileURLToPath, URL } from "node:url";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import VueRouter from 'unplugin-vue-router/vite';
+import tailwindcss from '@tailwindcss/vite';
+import Components from 'unplugin-vue-components/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import { resolve } from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [react()],
-    resolve: {
-        alias: {
-            "@": fileURLToPath(new URL("./src", import.meta.url)),
-            "@comp": fileURLToPath(
-                new URL("./src/components", import.meta.url)
-            ),
-            "@pages": fileURLToPath(new URL("./src/pages", import.meta.url)),
-            "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
-            "@api": fileURLToPath(new URL("./src/api", import.meta.url)),
-        },
+  plugins: [
+    vue(),
+    tailwindcss(),
+    Icons({
+      autoInstall: true,
+    }),
+    Components({
+      resolvers: [
+        IconsResolver({
+          prefix: false,
+          alias: {
+            s: 'heroicons-solid',
+            o: 'heroicons-outline',
+            m: 'heroicons-mini',
+            x: 'heroicons-micro',
+          },
+        }),
+      ],
+      dts: false,
+    }),
+    AutoImport({
+      imports: ['vue'],
+      dts: true,
+    }),
+    VueRouter({
+      routesFolder: 'src/pages',
+      exclude: ['src/pages/**/components/*.vue', 'src/pages/**/layouts/*.vue'],
+    }),
+  ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
     },
+  },
 });
